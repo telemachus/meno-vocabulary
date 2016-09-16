@@ -22,7 +22,7 @@ The work is available under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ## Can I help out?
 
-Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please [submit an issue here][issue]. Or if you’d rather, feel free to contact me at <a href=”&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#116;&#101;&#108;&#x65;&#109;&#97;&#99;&#104;&#117;&#115;&#64;&#x61;&#x72;&#112;&#x69;&#110;&#117;&#109;&#x2e;&#111;&#114;&#x67;”>&#116;&#x65;&#108;&#x65;&#x6d;&#97;&#x63;&#104;&#x75;&#x73;&#64;&#x61;&#114;&#112;&#x69;&#110;&#117;&#x6d;&#46;&#111;&#114;&#x67;</a> or [on Twitter][twitter].
+Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please [submit an issue here][issue]. Or if you’d rather, feel free to contact me at <mailto:telemachus@arpinum.org> or [on Twitter][twitter].
 
 [perseus]: http://www.perseus.tufts.edu/hopper
 [hodoi]: http://mercure.fltr.ucl.ac.be/Hodoi/concordances/platon_menon/listvocabulaire.cfm?lettre=001

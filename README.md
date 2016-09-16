@@ -22,7 +22,7 @@ The work is available under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ## Can I help out?
 
-Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please [submit an issue here][issue]. Or if you’d rather, feel free to contact me at <mailto:telemachus@arpinum.org> or [on Twitter][twitter].
+Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please [submit an issue here][issue]. Or if you’d rather, feel free to contact me via email (telemachus at arpinum dot org) or [on Twitter][twitter].
 
 [perseus]: http://www.perseus.tufts.edu/hopper
 [hodoi]: http://mercure.fltr.ucl.ac.be/Hodoi/concordances/platon_menon/listvocabulaire.cfm?lettre=001

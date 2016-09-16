@@ -1,0 +1,1105 @@
+% [[- LaTeX prelude
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[no-math]{fontspec}
+\setmainfont{Baskerville}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage[variant=medieval]{latin}
+\setotherlanguage[variant=ancient]{greek}
+\newfontfamily\greekfont[Script=Greek]{Times New Roman}
+
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber,dashed=false,%	
+	abbreviate=false]{biblatex}
+\addbibresource{vocabulary.bib}
+% See the following resources:
+%   https://orthostat.wordpress.com/2013/02/16/moving-to-biblatex-1/
+%%
+% Remove pp. in citations.
+\DeclareFieldFormat{postnote}{#1}
+% Remove pp. from bibliography.
+\DeclareFieldFormat%
+    [article,inbook,incollection,inproceedings,thesis,patent,unpublished]%
+    {pages}{{\nopp#1}}
+% Use single quotes around titles of chapters and articles, not double.
+% \DeclareFieldFormat%
+%     [article,inbook,incollection,inproceedings,thesis,patent,unpublished]%
+%     {title}{`#1'}
+% Use commas rather than periods to separate units in the bibliography.
+% \renewcommand*{\newunitpunct}{\addcomma\space}
+% Place a space rather than a comma between name and year in citations.
+% \renewcommand{\nameyeardelim}{~}
+% Place a colon+narrow space before page numbers in citations.
+\renewcommand{\postnotedelim}{:\,}
+% No "in:" for articles at all. For all else, remove the colon.
+\renewbibmacro{in:}{%
+	\ifentrytype{article}{}{\printtext{\bibstring{in}}}
+}
+% Remove parentheses around date in bibliography.
+% See http://tex.stackexchange.com/a/40710/29387
+\usepackage{xpatch}
+\xpatchbibmacro{date+extrayear}{%
+	\printtext[parens]%
+}{%
+	\setunit{\addperiod\space}%
+	\printtext%
+}{}{}
+
+\usepackage{enumitem}
+\setlist{noitemsep}
+\usepackage{marginnote}
+\usepackage[margin=1in]{geometry}
+
+\renewcommand\descriptionlabel[1]%
+    {\hspace{\labelsep}#1}
+\usepackage{hyperref}
+\urlstyle{rm}
+% -]]
+
+% [[- Document-
+\begin{document}
+\include{meno-vocabulary-titlepage}
+\reversemarginpar
+
+% [[- Introduction
+This document provides a complete vocabulary for Plato's \textit{Meno}. Here's a brief description of the principles I followed in putting together the vocabulary as well as some important conventions to note.
+
+The list should include every word in Plato's \textit{Meno}, no matter how basic, but I have flagged the more common or important words. If an asterisk appears in the outer left margin of a word, that word is either (i) especially common in ancient Greek or (ii) particularly important for Plato. In order to determine what words are especially common in ancient Greek, I relied on the ``Greek Core Vocabulary'' from the Dickinson College Commentary website.\footcite{cfrancese2014} Chrisopher Francese, the primary compiler of that list, notes that those 500 words represent nearly 65\% of all the forms in typical ancient Greek texts.\footcite{cfrancese2013} Any word in the DCC Greek List will have an asterisk, but I've also placed asterisks on some additional words. These aditional words fall into one of two categories: (i) cognates of words already on the DCC list or (ii) words I feel are especially common in or important for Plato. Words with an asterisk are a great first place for students to direct their attention when learning new vocabulary.
+
+I relied on three sources for the content of the entries. I use both the intermediate and the large Liddell and Scott Greek lexicons\footcite{middleliddell,greatscott} as well as the more recent Brill Dictionary of Ancient Greek.\footcite{montanari2015} Within entries, commas separate synonymous meanings, and semicolons separate distinct meanings.
+
+I've been somewhat inconsistent about principal parts. If a verb has an asterisk, I always give all its principal parts. In other cases, I've given complete principal parts if it seemed helpful—particularly if the principal parts were especially irregular or hard to predict.
+
+\clearpage
+% -]] Introduction
+
+% [[- Meanings!
+\begin{description}
+    \item[\textgreek{ἀγαθός, ἀγαθή, ἀγαθόν}] \marginnote{*}good; noble; skilful, capable
+    \item[\textgreek{ἀγαλμα, ἀγάλματος, τό}] a glory, delight, honour
+    \item[\textgreek{ἀγαμαι, ἀγάσομαι, ἠγασάμην, –––, –––, ἠγάσθην}] wonder, admire, marvel (at), be astonished; be delighted, be content (plus dative)
+    \item[\textgreek{ἀγαπάω}] treat with affection; love, be fond of; caress
+    \item[\textgreek{ἀγαυός, ἀγαυή, ἀγαυόν}] illustrious, noble
+    \item[\textgreek{ἁγέομαι}] Doric/lyric for \textgreek{ἡγέομαι}
+    \item[\textgreek{ἀγνοέω}] not perceive; not know, not recognize
+    \item[\textgreek{ἁγνός, ἁγνή, ἁγνόν}] pure, holy; chaste
+    \item[\textgreek{ἀγωνία, ἀγωνίας, ἡ}] a competition, contest; gymnastic exercise; training; (figurative) anxiety, concern; agony
+    \item[\textgreek{ἀγωνιστικός, ἀγωνιστική, ἀγωνιστικόν}] agonistic, to do with combat or competition, concerning combat or competition; (of a person) a lover of dispute, litigious, contentious
+    \item[\textgreek{ᾍδης, ᾍδου, ὁ}] Hades (ruler of the underworld)
+    \item[\textgreek{ἀδικέω}] \marginnote{*}be unjust, be wrong; do wrong (toward), harm, damage, mistreat (someone)
+    \item[\textgreek{ἀδικος, ἀδίκη, ἄδικον}] unjust, unfair, illegal; wicked
+    \item[\textgreek{ἀδύνατος, ἀδυνάτη, ἀδύνατον}] \marginnote{*}unable, incapable; impossible; powerless, weak
+    \item[\textgreek{ἀεί}] \marginnote{*}always, for ever
+    \item[\textgreek{ἀέκων}] against one's will, unwilling
+    \item[\textgreek{ἀθάνατος, ἀθάνατον}] immortal, undying; everlasting, perpetual
+    \item[\textgreek{Ἀθηναῖος, Ἀθηναία, Ἀθηναῖον}] Athenian, of or from Athens
+    \item[\textgreek{ἄθλιος, ἀθλία, ἄθλιον}] gaining the prize, winning; struggling, wretched, unhappy
+    \item[\textgreek{αἱρέω, αἱρήσω, εἷλον, ᾕρηκα, ᾕρημαι, ᾑρέθην}] \marginnote{*}snatch, seize, take; grasp, understand; win, obtain, conquer, capture; (middle) choose, prefer, take for oneself
+    \item[\textgreek{αἴρω, ἀρῶ, ἦρα, ἦρκα, ἦρμαι, ἤρθην}] \marginnote{*}raise, lift; take (up), pick up, gather; draw (of water); take away, remove, eliminate, destroy, kill, annul
+    \item[\textgreek{αἰσθητός, αἰσθητή, αἰσθητόν}] perceptible (by the senses), sensible
+    \item[\textgreek{ἀίσσω, ᾄξω, ᾖξα, –––, –––, ἠίχην}] swoop, rush; stir, bustle; move, stir; launch oneself, hurl
+    \item[\textgreek{αἰτία, αἰτίας, ἡ}] \marginnote{*}cause, motive; responsibility, blame; charge, accusation; goal, purpose; reputation
+    \item[\textgreek{αἰτιάομαι, αἰτιάσομαι, ᾐτιασάμην, –––, ᾐτίαμαι, ᾐτιάθην}] charge, accuse, hold responsible; censure, blame
+    \item[\textgreek{αἴτιος, αἰτία, αἴτιον}] \marginnote{*}guilty, blameworthy, culpable; responsible
+    \item[\textgreek{ἀκοή, ἀκοῆς, ἡ}] hearing (the sense); an ear; sound, din, noise; news, information, account, tradition, reputation; hearing, listening, the act of hearing
+    \item[\textgreek{ἀκόλαστος, ἀκόλαστον}] undisciplined, unbridled; intemperate, dissolute, lacking self-restraint, uncontrolled
+    \item[\textgreek{ἀκολουθέω}] follow
+    \item[\textgreek{ἀκόλουθος, ἀκόλουθον}] following, attending on; consequent, in conformity, coherent; correspondent, commensurate
+    \item[\textgreek{ἀκοντίζω}] throw a javelin or spear; throw (anything); strike
+    \item[\textgreek{ἀκούω, ἀκούσομαι, ἤκουσα, ἀκήκοα, ἤκουσμαι, ἠκούσθην}] \marginnote{*}hear, listen; perceive (more generally); heed, obey
+    \item[\textgreek{ἀκριβής, ἀκριβές}] \marginnote{*}exact, accurate, precise; scrupulous, conscientious, strict, rigorous
+    \item[\textgreek{ἀκριβῶς}] diligently, attentively, exactly, to perfection
+    \item[\textgreek{ἀκρόπολις, ἀκρόπολεως, ἡ}] the upper city; stronghold, citadel
+    \item[\textgreek{Ἀλεξιδήμος, Ἀλεξιδήμου, ὁ, }] Alexidemos, father of Memnon
+    \item[\textgreek{Ἀλευάδαι, Ἀλευαδῶν, αἱ}] descendants of Aleuas, Aleuadae
+    \item[\textgreek{ἀλήθεια, ἀληθείας, ἡ}] \marginnote{*}truth; sincerity, frankness, truthfulness; reality (as opposed to appearance or dream)
+    \item[\textgreek{ἀληθής, ἀληθές}] \marginnote{*}true; real, actual; unconcealed
+    \item[\textgreek{ἅλιος}] Doric for \textgreek{ἥλιος}
+    \item[\textgreek{ἀλλά}] otherwise, but; however, on the other hand; in any case, but at least, at least (often with \textgreek{γε})
+    \item[\textgreek{ἀλλῃ}] in another place, elsewhere; to another place, (to) somewhere else; (of manner) otherwise
+    \item[\textgreek{ἀλλήλων}] \marginnote{*}(only in cases other than the nominative) one another, each other
+    \item[\textgreek{ἀλλοῖος, ἀλλοία, ἀλλοῖον}] of another sort or kind, different
+    \item[\textgreek{ἄλλος, ἄλλη, ἄλλο}] \marginnote{*}other, another
+    \item[\textgreek{ἄλλοτε}] at another time, at other times
+    \item[\textgreek{ἄλλως}] \marginnote{*}in another way or manner, otherwise
+    \item[\textgreek{ἀλογία, ἀλογίας, ἡ}] lack of respect or regard; contempt; unreasonableness, irrationality, madness; brutality
+    \item[\textgreek{ἅμα}] \marginnote{*}at once, at the same time
+    \item[\textgreek{ἀμαθία, ἀμαθίας, ἡ}] ignorance; folly, stupidity; roughness, coarseness, lack of learning and polish
+    \item[\textgreek{ἁμαρτάνω, ἁμαρτήσομαι, ἡμάρτησα/ἥμαρτον, ἡμάρτηκα, ἡμάρτημαι, ἡμαρτήθην}] \marginnote{*}miss, miss the mark, not hit; make a mistake, be wrong; err, sin, go or do wrong
+    \item[\textgreek{ἀμείνων, ἄμεινον}] \marginnote{*}better, abler, stronger, braver
+    \item[\textgreek{ἀμελέω}] have no care for, be neglectful of
+    \item[\textgreek{ἀμφί}] \marginnote{*}\textit{adverb or preposition with genitive, dative, and accusative} (adverb) around, from both sides, from all sides; (with genitive) around; for, on, about, regarding; (with dative) around, from both sides, all around, beside, on; for, on, about, regarding; by means of, thanks to; (with accusative) around, through, beside, along; for, on, of, about; (of time) for, during, toward; (with numbers) around
+    \item[\textgreek{ἀμφότερος, ἀμφοτέρα, ἀμφότερον}] \marginnote{*}each or both of two
+    \item[\textgreek{ἄν}] \marginnote{*}\textit{modal particle} (no translation by itself)
+    \item[\textgreek{ἄν/ἐάν/ἤν}] \marginnote{*}if
+    \item[\textgreek{ἀνά}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) on, up on; (with dative) on, upon; (with accusative) up, upon, on; throughout
+    \item[\textgreek{ἀναγκαῖος, (ἀναγκαία,) ἀναγκαῖον}] compulsory, necessary, urgent; effective, authoritative; indispensable; (of people) related, relative
+    \item[\textgreek{ἀνάγκη, ἀνάγκης, ἡ}] \marginnote{*}force, constraint, necessity, compulsion; coercion or a means of coercion (e.g., torture, punishment, threats)
+    \item[\textgreek{ἀναγράφω}] inscribe, record; trace, outline (of lines and figures); describe, expound, narrate
+    \item[\textgreek{ἀναδίδωμι}] give, hold out, offer, entrust; produce, emit; distribute
+    \item[\textgreek{ἀνακινέω}] excite, arouse, awaken
+    \item[\textgreek{ἀναλαμβάνω}] take up, raise; regain, acquire again, recover; reset, re-establish, heal; repair, remedy
+    \item[\textgreek{ἀναλίσκω/ἀναλόω, ἀναλώσω, ἀνήλωσα, ἀνήλωκα, ἀνήλωμαι, ἀνηλώθην}] use up, spend (money or other resources); lavish or squander
+    \item[\textgreek{ἀναλόω}] see \textgreek{ἀναλίσκω}
+    \item[\textgreek{ἀναμιμνήσκω}] remind, cause ro remember, recall to the memory; (middle and passive) remember, recall
+    \item[\textgreek{ἀνάμνησις, ἀναμνήσεως, ἡ}] a calling to mind, recollection, remembering; (concretely) a memorial
+    \item[\textgreek{ἀναμνηστός, ἀναμνηστόν}] that which one can recollect, able to be remembered
+    \item[\textgreek{ἀναρτάω, ἀναρτήσω, ἀνήρτησα, ἀνήρτηκα, ἀνήρτημαι, ἀνηρτήθην}] hang, suspend; (middle) hang, subjugate (i.e., make dependent on oneself); (passive, usually) hang, depend, depend on, be referred to
+    \item[\textgreek{ἀνατίθημι}] attribute, refer; dedicate, consecrate; retract an opinion, change view
+    \item[\textgreek{ἁνδάνω}] please, delight, gratify
+    \item[\textgreek{ἀνδρεία, ἀνδρείας, ἡ}] manliness; energy, daring, courage
+    \item[\textgreek{ἀνδρεῖος, ἀνδρεία, ἀνδρεῖον}] manly, virile; masculine; proud, corageous; bold, brazen
+    \item[\textgreek{ἀνδριαντοποιέω}] make statues
+    \item[\textgreek{ἀνδριαντοποιός}] a statue-maker, statuary, sculptor
+    \item[\textgreek{ἀνδρικός, ἀνδρική, ἀνδρικόν}] of or for a man, masculine; manly, bold
+    \item[\textgreek{ἀνέρομαι}] enquire of, question
+    \item[\textgreek{ἀνερωτάω}] ask or inquire of, question
+    \item[\textgreek{ἄνευ}] \marginnote{*}\textit{preposition with genitive} without; apart from, far from; except, aside from
+    \item[\textgreek{ἀνευρίσκω, ἀνευρήσω, ἀνηῦρον/ἀνεῦρον}] find, discover; contrive, invent
+    \item[\textgreek{ἀνήρ, ἀνδρός, ὁ}] \marginnote{*}a man; husband
+    \item[\textgreek{Ἀνθεμίων, Ἀνθεμίωνος, ὁ}] Anthemion (a male name)
+    \item[\textgreek{ἀνθρώπινος}] of, from or belonging to a person; human
+    \item[\textgreek{ἄνθρωπος, ἀνθρόπου, ὁ}] \marginnote{*}human being, person
+    \item[\textgreek{ἄνοια, ἀνοίας, ἡ}] lack of reason, stupidity; thoughtlessness, lack of consideration; madness, fury, rage
+    \item[\textgreek{ἀντεικάζω, ἀντείκασομαι, ἀντῄκασα}] compare in return
+    \item[\textgreek{ἀντιποιέω}] do in exchange, return, reciprocate; strive (for something) pursue, research (plus genitive); claim
+    \item[\textgreek{Ἄνυτος, Ἀνύτου, ὁ}] Anytus, an Athenian and one of the accusers of Socrates in 399 BCE
+    \item[\textgreek{ἀνύω}] effect, achieve, accomplish, complete
+    \item[\textgreek{ἄνω}] \marginnote{*}up, aloft, upward(s)
+    \item[\textgreek{ἄξιος, ἀξία, ἄξιον}] \marginnote{*}weighing as much, of like value, worth as much as
+    \item[\textgreek{ἀξιόω, ἀξιώσω, ἠξίωσα, ἠξίωκα, ἠξίωμαι, ἠξιώθην}] \marginnote{*}judge worthy, think deserving; appraise, evaluate, honor; consider appropriate, fair, or deserverd; request, claim, require
+    \item[\textgreek{ἀπαγγέλλω}] report, announce; narrate, explain, describe; proclaim, recite; order
+    \item[\textgreek{ἀπάγω}] lead away, carry off; haul before court, summon, arrest
+    \item[\textgreek{ἄπαις, ἄπαιδος}] childless, without children
+    \item[\textgreek{ἀπαλλάσσω}] set free, release, deliver; leave off, quit, cease (from a genitive)
+    \item[\textgreek{ἄπαξ}] once, once only, once for all
+    \item[\textgreek{ἅπας, ἅπασα, ἅπαν}] \marginnote{*}quite all, the whole
+    \item[\textgreek{ἄπειμι}] be away, be absent; be missing
+    \item[\textgreek{ἄπειμι}] go away, depart; retreat; pass away, die; cease, fade
+    \item[\textgreek{ἄπειρος, ἄπειρον}] inexperienced, untried, unaccustomed, without knowledge (often followed by a genitive)
+    \item[\textgreek{ἀπεργάζομαι}] finish off, turn out complete
+    \item[\textgreek{ἀπιστέω}] without trust, not believe (often with dative); be incredulous, not believe; disobey
+    \item[\textgreek{ἁπλῶς}] \marginnote{*}simply; singly, in one way
+    \item[\textgreek{ἀπό}] \marginnote{*}\textit{preposition with genitive} from, away from; (of time) after, from; with, through, by means of; by, as a result of
+    \item[\textgreek{ἀποβάλλω}] throw away, repel, exclude; reject, disavow (an idea or argument)
+    \item[\textgreek{ἀποβλέπω}] look, pay attention, consider; watch, admire
+    \item[\textgreek{ἀποδέχομαι}] receive, accept; receive favorably, approve, admit
+    \item[\textgreek{ἀποδημέω}] be away from home, be abroad, travel away from home
+    \item[\textgreek{ἀποδιδράσκω}] run away or off, escape
+    \item[\textgreek{ἀποδίδωμι}] give up, give back, restore, return; give (what is owed or due), pay (back); fulfill, carry out (of a promise or vow)
+    \item[\textgreek{ἀποθνήσκω, ἀποθανοῦμαι, ἀπέθανον, ἀποτέθνηκα, –––, –––}] \marginnote{*}die off, die
+    \item[\textgreek{ἀποκάμνω}] desist; renounce; grow weary, become discouraged
+    \item[\textgreek{ἀποκρίνω, ἀποκρινῶ, ἀπέκρινα, –––, ἀποκέκριμαι, ἀπεκρίθην}] \marginnote{*}separate, divide, distinguish; choose; (middle and aorist passive) respond, say in response; respond in defense, defend oneself
+    \item[\textgreek{ἀπόκρισις, ἀποκρίσεως, ἡ}] separation, distinction; response, reply, answer; decision; defense; embassy, assignment
+    \item[\textgreek{ἀπολείβω}] let drop off, to pour a libation
+    \item[\textgreek{ἀπολείπω}] leave over, leave behind
+    \item[\textgreek{ἀπόλλυμι, ἀπολῶ, ἀπώλεσα/ἀπωλόμην, ἀπολώλεκα/ἀπόλωλα, –––, –––}] \marginnote{*}destroy utterly, kill, slay; (middle) perish, die
+    \item[\textgreek{ἀπολύω}] loosen, unbind; acquit, set free, absolve; let go, release; repudiate, reject
+    \item[\textgreek{ἀποπέμπω}] send off, send away, dismiss; send back
+    \item[\textgreek{ἀπορέω}] be without means or resource; be at a loss, be uncertain, not know, be confused
+    \item[\textgreek{ἀπορία, ἀπορίας, ἡ}] difficulty of passing; difficulty; hesitation, perplexity, inability to work out or work through a problem or question, the state of being at a loss for what to think or how to find an answer
+    \item[\textgreek{ἀπορροή, ἀπορροῆς, ἡ}] outflow, flow; effusion, exhalation, emanation
+    \item[\textgreek{ἀποτέμνω}] cut off, sever
+    \item[\textgreek{ἀποφαίνω}] show, indicate; make known, declare, express an opinion; demonstrate, prove
+    \item[\textgreek{ἅπτω}] attatch, tie, bind; set on fire; attach; grasp, touch
+    \item[\textgreek{ἄρα}] \marginnote{*}now, next, then, so then; therefore, then (drawing an inference)
+    \item[\textgreek{ἆρα}] \marginnote{*}(particle introducing a question)
+    \item[\textgreek{ἀργός, ἀργόν}] inactive, idle, sluggish, leisurely, lazy; that has no outcome, useless (of things)
+    \item[\textgreek{ἀργύριον, ἀργυρίου, τό}] \marginnote{*}a piece of silver, a silver coin
+    \item[\textgreek{ἀρέσκω}] satisfy, please, be pleasing; (impersonal) be decided, be established
+    \item[\textgreek{ἀρετή, ἀρετῆς, ἡ}] \marginnote{*}goodness, excellence; virtue; courage, bravery, valor (in battle)
+    \item[\textgreek{ἀριθμέω}] number, count or reckon up
+    \item[\textgreek{Ἀριστείδης, Ἀριστείδου, ὁ}] Aristeides (a male name)
+    \item[\textgreek{Ἀρίστιππος, Ἀριστίππου, ὁ}] Aristippus (a male name)
+    \item[\textgreek{ἄριστος, ἀρίστη, ἄριστον}] \marginnote{*}best, noblest
+    \item[\textgreek{ἁρμόττω}] fit together, join; fit, suit, be adapted (to), be fit (for) (plus dative)
+    \item[\textgreek{ἄρσην, ἄρσεν}] male
+    \item[\textgreek{ἄρτι}] (of the present) right now, at this moment; (of the past) just now, recently
+    \item[\textgreek{ἀρχή, ἀρχῆς, ἡ}] \marginnote{*}a beginning, origin; rule, empire, realm; magistracy
+    \item[\textgreek{ἄρχω, ἄρξω, ἦρξα, ἦρχα, ἦργμαι, ἤρχθην}] \marginnote{*}lead, rule, govern (plus genitive); begin, commence (plus genitive)
+    \item[\textgreek{ἄρχων, ἄρχοντος, ὁ}] a ruler, commander, chief, captain
+    \item[\textgreek{ἀσκητός, ἀσκητή, ἀσκητόν}] adorned, beautifully made; acquired by practice; (of a person) practiced, trained (in something)
+    \item[\textgreek{ἀστός, ἀστοῦ, ὁ}] a townsman, citizen
+    \item[\textgreek{ἀτάρ}] but, yet
+    \item[\textgreek{ἅτε}] just as, so as
+    \item[\textgreek{ἀτεχνής, ἀτεχνές}] inexperienced, unskilled
+    \item[\textgreek{ἄτεχνος, ἄτεχνον}] unskilled, incompetent, inept, inexperienced; uncrafted, rough (of things)
+    \item[\textgreek{ἀτεχνῶς}] simply, truly, absolutely
+    \item[\textgreek{ἄττα}] an alternative for \textgreek{ἅττα}, which is itself an alternative for \textgreek{ἅτινα}; see \textgreek{ὅστις}
+    \item[\textgreek{ἅττα}] alternative form of \textgreek{ἅτινα} from \textgreek{ὅστις, ἥτις, ὅ τι}
+    \item[\textgreek{αὖ}] \marginnote{*}moreover; on the other hand; back (again)
+    \item[\textgreek{αὖθις}] \marginnote{*}moreover; on the other hand; back (again)
+    \item[\textgreek{αὔλησις, αὐλήσεως, ἡ}] flute-playing
+    \item[\textgreek{αὐλητής, αὐλητοῦ, ὁ}] a flute-player
+    \item[\textgreek{αὐξάνω}] make large, increase, augment
+    \item[\textgreek{αὐτόματος, (αὐτομάτη,) αὐτόματον}] automatic; spontaneous, uncultivated; accidental, by chance
+    \item[\textgreek{αὐτόματον, αὐτομάτου, τό}] chance, accident, happenstance
+    \item[\textgreek{αὐτός, αὐτή, αὐτό}] \marginnote{*}(in predicate position) self, oneself; (in attributive position) same, the same; (alone outside of nominative used as non-emphatic 3rd person pronoun) him, her, it, them
+    \item[\textgreek{αὐτόσε}] (to) there, right there (of motion)
+    \item[\textgreek{αὐτοῦ}] in the same place; over there; here; in the same moment; immediately
+    \item[\textgreek{αὐχμός, αὐχμοῦ, ὁ}] drought
+    \item[\textgreek{ἀφίημι, ἀφήσω, ἀφῆκα, ἀφεῖκα, ἀφεῖμαι, ἀφείθην}] \marginnote{*}send away, send forth; leave alone, neglect; let go, discharge, release
+    \item[\textgreek{ἀφικνέομαι, ἀφίξομαι, ἀφικόμην, –––, ἀφῖγμαι, –––}] \marginnote{*}reach, arrive, come (to); return
+    \item[\textgreek{ἄφοβος, ἄφοβον}] without fear, unafraid
+    \item[\textgreek{ἀφοράω}] look away from
+    \item[\textgreek{ἀφροσύνη, ἀφροσύνης, ἡ}] folly, thoughtlessness; stupidity
+    \item[\textgreek{ἄφρων, ἄφρον}] without sense, thoughtless; stupid
+    \item[\textgreek{ἄχθομαι}] be annoyed, be irritated; suffer, be oppressed
+    \item[\textgreek{βαδίζω}] walk, march; go on foot
+    \item[\textgreek{βασιλεύς, βασιλέως, ὁ}] \marginnote{*}a king, chief, sovereign, leader
+    \item[\textgreek{βελτίων, βέλτιον}] \marginnote{*}better
+    \item[\textgreek{βίος, βίου, ὁ}] \marginnote{*}life
+    \item[\textgreek{βλαβερός, βλαβερά, βλαβερόν}] harmful, hurtful, noxious, disadvantageous
+    \item[\textgreek{βλάπτω}] damage, harm, do wrong; obstruct, hinder, stop
+    \item[\textgreek{βλέπω, βλέψομαι, ἔβλεψα, βέβλεφα, βέβλεμμαι, ἐβλέφθην}] \marginnote{*}see; look at; watch, over; be interested, direct one's attention; (with an adverb or adverbial participle) look (a certain way), have a certain look
+    \item[\textgreek{βουλεύω, βουλεύσω, ἐβούλευσα, βεβούλευκα, βεβούλευμαι, ἐβουλεύθην}] \marginnote{*}plan (to); decide (to); (middle) deliberate
+    \item[\textgreek{βούλομαι, βουλήσομαι, –––, βεβούλημαι, –––, ἐβουλήθην}] \marginnote{*}wish, want, desire, hope for; be willing; aim at, tend toward; want to say, mean
+    \item[\textgreek{βραχύς, βραχεῖα, βραχύ}] \marginnote{*}short, small, brief
+    \item[\textgreek{γάρ}] \marginnote{*}for (explaining something that precedes); indeed, in fact (confirming)
+    \item[\textgreek{γε}] \marginnote{*}indeed, at least, at any rate
+    \item[\textgreek{γείτων, γείτονος, ὁ/ἡ}] a neighbour
+    \item[\textgreek{γελάω}] laugh; smile; mock, make fun; (of things) smile, shine
+    \item[\textgreek{γένεσις, γενέσεως, ἡ}] an origin, source, productive cause, principle, source of life; generation, production, creation; birth, origin
+    \item[\textgreek{γενναῖος, (γενναία,) γενναῖον}] high-born, noble; well-bred (of animals); noble, high-minded; excellent, notable, good of their kind (of things)
+    \item[\textgreek{γεωμετρέω}] practice geometry, be a geometer; measure
+    \item[\textgreek{γεωμέτρης, γεωμέτρου, ὁ}] a land-measurer; geometer
+    \item[\textgreek{γεωμετρία, γεωμετρίας, ἡ}] geometry
+    \item[\textgreek{γίγνομαι, γενήσομαι, ἐγενόμην, γέγονα, γεγένημαι, ἐγενήθην}] \marginnote{*}come into being, be born, be created; prove to be; become, turn out; (often, simply) be
+    \item[\textgreek{γιγνώσκω, γνώσομαι, ἔγνων, ἔγνωκα, ἔγνοσμαι, ἐγνώσθην}] \marginnote{*}learn, get to know, realize; known, understand, recognize; form an opinion, believe, think
+    \item[\textgreek{γόης, γόατος, ὁ}] a sorcerer, enchanter, mage, warlock
+    \item[\textgreek{γοητεύω}] bewitch, beguile
+    \item[\textgreek{γονεύς, γονέως, ὁ}] a parent, father; ancestor, forefather
+    \item[\textgreek{Γοργίας, Γοργίου, ὁ}] Gorgias (a famous rhetorician and teacher of rhetoric)
+    \item[\textgreek{γοῦν}] at least then, at any rate, any way; (often used to introduce a partial proof)
+    \item[\textgreek{γραμμή, γραμμῆς, ἡ}] the stroke of a pen; a line; middle line on a board
+    \item[\textgreek{γυνή, γυναικός, ἡ}] \marginnote{*}a woman; wife
+    \item[\textgreek{γωνία, γωνίας, ἡ}] a corner, angle
+    \item[\textgreek{δαιδάλλω}] work cunningly, deck or inlay intricately, adorn, embellish
+    \item[\textgreek{Δαίδαλος, Δαιδάλου, ὁ}] Daedalus (a mythical artist)
+    \item[\textgreek{δαιμόνιος, δαιμονία, δαιμόνιον}] divine, supernatural, marvelous, extraordinary (of things); admirable, excellent, extraordinary (of people); struck by adverse fate, unfortunate, miserable (of people)
+    \item[\textgreek{δαπανάω}] spend; consume, exhaust, waste, destroy
+    \item[\textgreek{δέ}] \marginnote{*}but; and
+    \item[\textgreek{δεῖ, δεήσει, ἐδέησε, –––, –––, –––}] \marginnote{*}(impersonal verb) it is necessary, ought, must; (with genitive) it is lacking, there is a need (of) (from \textgreek{δέω})
+    \item[\textgreek{δείκνυμι, δείξω, ἔδιξα, δέδιχα, δέδειγμαι, ἐδείχθην}] \marginnote{*}display, exhibit; show, point out; tell, explain, teach; prove
+    \item[\textgreek{δεινός, δεινή, δεινόν}] \marginnote{*}fearful, terrible, dread, dire; expert, wise, intelligent, clever, skillful
+    \item[\textgreek{δέκα}] \marginnote{*}ten
+    \item[\textgreek{δέομαι, δεήσομαι, –––, –––, –––, ἐδεήθην}] have need of (plus a genitive); ask, demand, require something (in the genitive or accusative) from someone (in the genitive); ask or request someone (in the genitive) to do something (with an infinitive) (from \textgreek{δέω})
+    \item[\textgreek{δέον}] \marginnote{*}that which is binding, needful, right, proper
+    \item[\textgreek{δεσμός, δεσμοῦ, ὁ}] string, rope, cable, strap, chain; bindings, chains; prison, imprisonment; binding, bond, connection union
+    \item[\textgreek{δεσπότης, δεσπότου, ὁ}] a master, lord, the master of the house
+    \item[\textgreek{δεῦρο}] (of place) this way, over here, to this place, here; (in an argument) up to here, up to this point; (of time) up to now
+    \item[\textgreek{δέχομαι}] take, accept, receive
+    \item[\textgreek{δέω}] \marginnote{*}lack, need (with genitive); (impersonal) there is need, one must, it is necessary
+    \item[\textgreek{δή}] \marginnote{*}surely, really; in fact, indeed; so then, so
+    \item[\textgreek{δῆλος, δήλη, δῆλον}] \marginnote{*}visible, conspicuous; clear, manifest, evident
+    \item[\textgreek{δηλόω, δηλώσω, ἐδήλωσα, δεδήλωκα, δεδήλωμαι, ἐδηλώθην}] \marginnote{*}show; disclose, reveal, make known; declare, explain, set forth
+    \item[\textgreek{δήπου}] perhaps, it may be
+    \item[\textgreek{δῆτα}] certainly, to be sure, of course
+    \item[\textgreek{διά}] \marginnote{*}\textit{preposition with genitive and accusative} (with genitive) through, right through; over, all through; throughout, during (of time); by, through (of agent); (with accusative) through; throughout, over; during (of time); through, by means of, by aid of (of agent); on account of, because of; for the sake of
+    \item[\textgreek{διαβιόω}] live through, pass, spend (of time or periods of time)
+    \item[\textgreek{διαλέγομαι}] talk, converse, discuss; explain; say
+    \item[\textgreek{διαλεκτικός, διαλεκτική, διαλεκτικόν}] of or for conversation; concerning discussion or dialectic (i.e., the skill of argument); dialectical
+    \item[\textgreek{διαμάχομαι}] fight or strive with, struggle against
+    \item[\textgreek{διάμετρος, διαμέτρου, ἡ}] the diameter or diagonal (of a geometrical figure)
+    \item[\textgreek{διαφερόντως}] diversely, differently, in a different manner, at a different level, to a different degree; above all, especially
+    \item[\textgreek{διαφέρω, διοίσω, διήνεγκα/διήνεγκον, διενήνοχα, διεωήνεγμαι, διηνέχθην}] \marginnote{*}carry in different ways, spread; carry over or across; differ, be different from
+    \item[\textgreek{διαφεύγω}] flee through, get away from, escape
+    \item[\textgreek{διαφθείρω, διαφθερῶ, διέφθειρα, διέφθαρκα, διέφθαρμαι, διεφθάρην}] \marginnote{*}destroy (utterly); corrupt, ruin
+    \item[\textgreek{διαφθορά, διαφθορᾶς, ἡ}] destruction, ruin, blight, death.
+    \item[\textgreek{διδακτός, διδακτή, διδακτόν}] taught, learned; able to be taught or learned
+    \item[\textgreek{διδάσκαλος, διδασκάλου, ὁ}] a teacher, instructor; master
+    \item[\textgreek{διδάσκω, διδάξω, ἐδίδαξα, δεδίδαχα, δεδίδαγμαι, ἐδιδάχθην}] \marginnote{*}teach, instruct; explain, demonstrate
+    \item[\textgreek{διδαχή, διδαχῆς, ἡ}] instruction, education, doctrine
+    \item[\textgreek{δίδωμι, δώσω, ἔδωκα, δέδωκα, δέδομαι, ἐδόθην}] \marginnote{*}give, donate, offer; grant, assign, accord; bestow, entrust; give in marriage, marry off
+    \item[\textgreek{διέξειμι}] leave (through), cross, traverse, pass (through or across); narrate, explain, explain in detail 
+    \item[\textgreek{διέρχομαι, δίειμι/διελεύσομαι, διῆλθον}] go across, cross; reach, strike, affect; narrate, expound, recount
+    \item[\textgreek{διισχυρίζομαι}] lean upon, rely on; affirm strongly, maintain, uphold (strongly)
+    \item[\textgreek{δίκαιος, δικαία, δίκαιον}] \marginnote{*}observant of custom and social rule, well-ordered, civilized; just, lawful, right, righteous; even, well-balanced (of things)
+    \item[\textgreek{δικαιοσύνη, δικαιοσύνης, ἡ}] righteousness, justice
+    \item[\textgreek{διό}] for which reason, wherefore, on which account
+    \item[\textgreek{διοικέω}] administer, rue, govern; (middle) administer (for oneself), rule, regulate
+    \item[\textgreek{δῖος, δῖα, δῖον}] god-like, divine; wondrous, sacred
+    \item[\textgreek{διότι}] for the reason that, since
+    \item[\textgreek{διπλάσιος, διπλασία, διπλάσιον}] twofold, double; twice as much as, twice as many as, twice as long as
+    \item[\textgreek{δίπους, δίποδος}] two-footed
+    \item[\textgreek{δίς}] twice, doubly
+    \item[\textgreek{δίχα}] \textit{adverb or preposition with genitive} (adverb) in two, asunder; diversely, in a discordant manner; separetely, apart; (preposition with genitive) in disagreement, in dissent, in contrast; separately, far from; without; except; besides
+    \item[\textgreek{δοκέω, δόξω, ἔδοξα/ἐδόκησα, δεδόκηκα, δέδογμαι, ἐδοκήθην}] \marginnote{*}seem, appear, be considered; think, suppose, believe; seem good; decide, decree
+    \item[\textgreek{δόξα, δόξης, ἡ}] \marginnote{*}a notion; expectation; opinion, judgment, belief; reputation, estimation (for good or bad); glory, honor
+    \item[\textgreek{δοξάζω}] thing, suppose, imagine; believe, think, judge, consider (upon reflection); have or form an opinion
+    \item[\textgreek{δοῦλος, δούλου, ὁ}] \marginnote{*}a slave
+    \item[\textgreek{δραπετεύω}] run away
+    \item[\textgreek{δραπέτης, δραπέτου, ὁ}] a runaway, fugitive; runaway slave, escaped slave
+    \item[\textgreek{δρέπω}] pluck, cull
+    \item[\textgreek{δύναμαι, δυνήσομαι, –––, –––, δεδύνημαι, ἐδυνήθην}] \marginnote{*}(plus infinitive) be able, have (the) ability, can; be capable, be strong enough
+    \item[\textgreek{δύναμις, δυνάμεως, ἡ}] \marginnote{*}power, might, strength; authority, influence; property, quality, endowment; sense, significance (of words); force, troop, army; (mathematical) a power, square, square root
+    \item[\textgreek{δυνατός, δυνατή, δυνατόν}] \marginnote{*}strong, mighty, able, capable
+    \item[\textgreek{δύο}] \marginnote{*}two
+    \item[\textgreek{δυσχεραίνω}] bear ill will, dislike, detest, be unable to tolerate; not accept, be discontent with (an idea)
+    \item[\textgreek{ἕ}] \marginnote{*}see οὗ
+    \item[\textgreek{ἐάν/ἤν/ἄν}] \marginnote{*}if
+    \item[\textgreek{ἑαυτοῦ, ἑαυτῆς, ἑαυτοῦ}] \marginnote{*}himself, herself, itself, themselves (never in nominative)
+    \item[\textgreek{ἐάω, ἐάσω, εἴασα, εἴακα, εἴαμαι, εἰάθην}] \marginnote{*}let, allow, permit; let be, let alone
+    \item[\textgreek{ἑβδομήκοντα}] seventy
+    \item[\textgreek{ἐγγύς}] \textit{adverb and preposition with genitive and dative} (adverb) near, close, beside; almost, more or less, nearly, about; (preposition with genitive) near, close, beside; (preposition with genitive or dative) near or next; (preposition with genitive) similar, close to
+    \item[\textgreek{ἐγκωμιάζω}] praise, laud, extol
+    \item[\textgreek{ἐγώ}] \marginnote{*}I
+    \item[\textgreek{ἔδω}] eat
+    \item[\textgreek{ἐθέλω, ἐθελήσω, ἠθέλησα, ἠθέληκα, –––, –––}] \marginnote{*}wish, want, desire; be willing, consent; (negative) refuse, be unwilling; hold, claim, assert, maintain
+    \item[\textgreek{ἐθίζω}] accustom, habituate
+    \item[\textgreek{ἔθος, ἔθους, τό}] custom, habit, usage, tradition
+    \item[\textgreek{εἰ}] \marginnote{*}if; whether
+    \item[\textgreek{εῖδον}] \marginnote{*}see, perceive, behold (2nd aorist for \textgreek{ὁράω})
+    \item[\textgreek{εῖδος, εἴδους, τό}] appearance, form, shape, figure; kind, nature, class, sort; (Plato and then other philosophers) a (Platonic) form, ideal form, universal (we will discuss in class what this involves
+    \item[\textgreek{εῖεν}] Well! So! Come now! (in dialogue, especially to mark transitions)
+    \item[\textgreek{εἴθε}] Would that\dots ! If only\dots ! (not necessarily translated as such, but it can introduce a wish)
+    \item[\textgreek{εἰκάζω}] protray, represent, depict; imagine, surmise, infer; liken, compare (one thing to another)
+    \item[\textgreek{εἰκός, εἰκότος, τό}] \marginnote{*}(from \textgreek{ἔοικα}) (what seems) good good, likely, reasonable, sensible, natural; likelihood, probability, a likely proposition (in logic, as opposed to a clear fact)
+    \item[\textgreek{εἰκότως}] in all likelihood, suitably, fairly, reasonably, naturally
+    \item[\textgreek{εἰκών, εἰκόνος, ἡ}] a likeness, image, portrait
+    \item[\textgreek{εἰμί, ἔσομαι, –––, –––, –––, –––}] \marginnote{*}be, to exist
+    \item[\textgreek{εἶμι, –––, –––, –––, –––, –––}] \marginnote{*}(will) go (in Attic Greek usually used as the future of \textgreek{ἔρχομαι} instead of \textgreek{ἐλεύσομαι}, which was felt to be poetic
+    \item[\textgreek{εἴπερ}] if really, if indeed; even if, even though; if that is to say (implying doubt)
+    \item[\textgreek{εἶπον}] \marginnote{*}(2nd aorist for \textgreek{λέγω, φημί}) speak, say
+    \item[\textgreek{εἰς/ἐς}] \marginnote{*}(preposition with accusative) into, to; up to, until, to (of time); to, towards, in relation to
+    \item[\textgreek{εἷς, μία, ἕν}] \marginnote{*}one
+    \item[\textgreek{εἰσαφικνέομαι}] come into or to, reach or arrive at
+    \item[\textgreek{εἶτα}] \marginnote{*}then, next
+    \item[\textgreek{εἴτε}] \marginnote{*}and if; or if; (repeated) whether\dots or; either\dots or
+    \item[\textgreek{ἐκ, ἐξ}] \marginnote{*}\textit{preposition with genitive} out of, from; since (of time); of, out of; by, at the hands of; according to
+    \item[\textgreek{ἕκαστος, ἑκάστη, ἕκαστον}] \marginnote{*}every, every one, each, each one
+    \item[\textgreek{ἑκάστοτε}] each time, on each occasion
+    \item[\textgreek{ἑκάτερος, ἑκατέρα, ἑκάτερον}] \marginnote{*}each of two, either, each singly
+    \item[\textgreek{ἐκεῖνος, ἐκείνη, ἐκεῖνον}] \marginnote{*}that, those
+    \item[\textgreek{ἑκκαίδεκα}] sixteen
+    \item[\textgreek{ἐκπλέω}] sail out, sail away, weigh anchor
+    \item[\textgreek{ἐκπορίζω}] procure, acquire; furnish; devise, plot; (middle) obtain, get
+    \item[\textgreek{ἐλάττων, ἔλαττον}] \marginnote{*}smaller, less
+    \item[\textgreek{ἐλαύνω, ἐλάω, ἤλασα, -ελήλακα, ἐλήλαμαι, ἠλάθην}] \marginnote{*}drive, drive on, set in motion
+    \item[\textgreek{ἐλεγεῖον, ἐλεγείου, τό}] a couplet consisting of hexameter and pentameter, elegiac couplet; the meter of elegy
+    \item[\textgreek{ἐλέγχω, ἐλέγξω, ἤλεγξα, –––, ἐλήλεγμαι, ἠλέχθην}] disgrace, dishonor, distain; preproach, blame, accuse; examine, cross-examine, put to the test; refute, overcome in argument
+    \item[\textgreek{ἐλεύθερος, ἐλευθέρα, ἐλεύθερον}] \marginnote{*}free
+    \item[\textgreek{Ἑλλάς, Ἑλλάδος, ἡ}] Hellas, Greece; (originally) a city in Thessaly or a part of Thessaly
+    \item[\textgreek{ἐλλείπω}] leave behind, leave out, omit; fall behind, fail, be lacking, be insufficient, be inferior
+    \item[\textgreek{Ἕλλην, Ἕλληνος}] a Greek; (later) a Gentile (as opposed to someone Jewish)
+    \item[\textgreek{ἑλληνίζω}] speak Greek, be able to speak Greek
+    \item[\textgreek{ἐμαυτοῦ}] of me, of myself
+    \item[\textgreek{ἐμός, ἐμή, ἐμόν}] mine, my, of me
+    \item[\textgreek{Ἐμπεδοκλῆς, Ἐμπεδοκλέους, ὁ}] Empedocles (early Greek poet and philosopher)
+    \item[\textgreek{ἔμπειρος, ἔμπειρον}] experienced or practiced (in); expert, skilled (at or in)
+    \item[\textgreek{ἔμφρων, ἔμφρον}] conscious, awake; sober; sensible, sane; rational, intelligent; prudent, wise
+    \item[\textgreek{ἐν}] \marginnote{*}\textit{preposition with dative} in, inside; among
+    \item[\textgreek{ἐναντίον}] against; conversely, vice versa
+    \item[\textgreek{ἐναντίος, ἐναντίον}] \marginnote{*}opposite
+    \item[\textgreek{ἔνατος, ἐνάτη, ἔνατον}] \marginnote{*}ninth
+    \item[\textgreek{ἐνδείκνυμι/ἐνδεικνύω}] indicate, display, reveal; (middle) show, display, make known; (judicial) denounce
+    \item[\textgreek{ἐνδίδωμι}] give in
+    \item[\textgreek{ἔνδον}] in(side), within; in the house, at home
+    \item[\textgreek{ἔνειμι}] be present, occur; be in, be inside; be among; be possible
+    \item[\textgreek{ἕνεκα}] \marginnote{*}\textit{preposition with genitive; usually follows the noun in the genitive} on account of, for the sake of, because of, for; as far as regards, as for
+    \item[\textgreek{ἐνθάδε}] (to) here (of motion), to this place; at this moment, at this time
+    \item[\textgreek{ἐνθένδε}] from here, from this place; next, after this, subsequently
+    \item[\textgreek{ἔνθετος, ἔνθετον}] put in, implanted; capable of being introduced, able to be put in
+    \item[\textgreek{ἐνθουσιάζω}] be inspired or possessed (by a god); be passionate; be crazy
+    \item[\textgreek{ἐνθουσιάω}] be inspired or possessed (by a god); be passionate; be crazy
+    \item[\textgreek{ἐνθυμέομαι}] think, reflect, consider; deduce, conclude
+    \item[\textgreek{ἔνιος, ἐνία, ἔνιον}] some, any; (usually plural) some, certain ones
+    \item[\textgreek{ἐνίοτε}] sometimes, at times
+    \item[\textgreek{ἐννέα}] \marginnote{*}nine
+    \item[\textgreek{ἐννοέω}] have in mind, to think, consider, reflect; realize, understand
+    \item[\textgreek{ἐντείνω, ἐντενῶ, ἐνέτεινα, ἐντέτακα, ἐντέταμαι, ἐνετάθην}] stretch, strain tight, hold tight; stretch over, cover; be inscribed (as)
+    \item[\textgreek{ἐντίθημι}] put in or into
+    \item[\textgreek{ἐντός}] \textit{adverb or preposition with genitive} within, inside; on this side (of)
+    \item[\textgreek{ἐντυγχάνω}] meet, encounter (plus dative); join, speak
+    \item[\textgreek{ἐξακέομαι}] heal completely, heal a wound; repair, mend
+    \item[\textgreek{ἐξαπατάω}] deceive, fool, make fun of
+    \item[\textgreek{ἐξαπάτη, ἐξαπάτης, ἡ}] deception
+    \item[\textgreek{ἐξελαύνω}] drive out (of, from), lead away; expel, drive away; proceed, advance, march, leave
+    \item[\textgreek{ἐξεπίτηδες}] by design, deliberately, intentionally
+    \item[\textgreek{ἔξεστι}] it is allowed, it is in one's power; it is possible
+    \item[\textgreek{ἐξευρίσκω}] find out, discover
+    \item[\textgreek{ἔοικα}] \marginnote{*}be similar to, be like; seem; seem good; seem likely or probable; be fitting, right, seemly; befit
+    \item[\textgreek{ἐοικότως}] similarly, like
+    \item[\textgreek{ἐπαγγέλλω}] tell, proclaim, announce
+    \item[\textgreek{ἐπαχθής, ἐπαχθές}] heavy, ponderous
+    \item[\textgreek{ἐπεγείρω}] awaken, rouse up
+    \item[\textgreek{ἐπεί}] \marginnote{*}after, when; as soon as; given that, since
+    \item[\textgreek{ἐπειδάν}] whenever, as often as
+    \item[\textgreek{ἔπειτα}] \marginnote{*}then, next, afterwards; then, therefore, so; and then, then (with emphasis in questions)
+    \item[\textgreek{ἐπέχω}] have or hold (something on something else); hold, present, offer; contain; keep back, restrain; aim towards; check oneself, stop, cease; suspend judgment, remain in doubt
+    \item[\textgreek{ἐπί}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) on, upon, on top of; (with dative) upon; at, near; over; (of accumulation) after; in dependence upon or on, in the power of; (of time) by, during; for the purpose or end, for, on condition of; (with accusative) upon, onto; up to, as far as; against, towards, to; for (the purpose of), on account of
+    \item[\textgreek{ἐπιδείκνυμι/ἐπιδεικνύω}] show, give proof; demonstrate, explain, make (someone) see
+    \item[\textgreek{ἐπιζητέω}] seek, look for; demand, ask for, inquire (about)
+    \item[\textgreek{ἐπιθυμέω}] desire, long for, want
+    \item[\textgreek{ἐπιθυμητής, ἐπιθυμητοῦ, ὁ}] \textit{used as adjective or noun} desirous, longing (for a genitive); friend, supporter, follower
+    \item[\textgreek{ἐπιθυμητός, ἐπιθυμητόν}] desired; desirable
+    \item[\textgreek{ἐπίκτητος, ἐπίκτητον}] gained besides or in addition; newly acquired
+    \item[\textgreek{ἐπιμέλεια, ἐπιμελείας, ἡ}] care, diligent attention, concern; office, duty
+    \item[\textgreek{ἐπιμένω}] remain, stay; be waiting, expect; persist, persevere
+    \item[\textgreek{ἐπίπεδος, ἐπίπεδον}] on the ground, on the ground floor; flat, level; (substantive) a flat plane; plane, two-dimensional (in the context of geometry)
+    \item[\textgreek{ἐπίπνους, ἐπίπνουν}] (literal) breathed upon; inspired
+    \item[\textgreek{ἐπίσταμαι, ἐπιστήσομαι, ἠπιστάμην}] know; know how to, be able to (plus infinitive)
+    \item[\textgreek{ἐπιστήμη, ἐπιστήμης, ἡ}] \marginnote{*}acquaintance with; knowledge, scientific knowledge; a science, i.e., a body or area of knowledge
+    \item[\textgreek{ἐπιστήμων, ἐπίστημον}] knowing, wise, prudent
+    \item[\textgreek{ἐπιτάττω}] put in order, arrange; put in command, put in charge; order, command, enjoin
+    \item[\textgreek{ἐπιτρέπω}] pass on, entrust; permit, concede, leave; have confidence in, trust, rely on (plus dative); yield, indulge, give free rein (plus dative)
+    \item[\textgreek{ἐπιτυγχάνω}] hit a target; achieve or obtain a result or goal; succeed, have success, be fortunate; bump into, meet
+    \item[\textgreek{ἐπιχειρέω}] set about, undertake, attempt; attack, assail (i.e., lay hands on with hostile intention)
+    \item[\textgreek{ἐπιχείρημα, ἐπιχειρήματος, τό}] undertaking, endeavor, attempt; exploit, attack, action; demonstration, argument, argumentation
+    \item[\textgreek{ἐπιχώριος, (ἐπιχωρία,) ἐπιχώριον}] local, native, indigenous; regional, national, usual; (as a substantive) fellow citizen
+    \item[\textgreek{ἕπομαι, ἕψομαι, ἑσπόμην, –––, –––, –––}] \marginnote{*}follow; accompany, escort; keep pace with (plus dative); follow, conform to, obey; pursue, chase, follow after; follow (logically, as a consequence)
+    \item[\textgreek{ἔπος, ἔπους, τό}] \marginnote{*}a word; a story, tale; the word of a deity, prophecy, oracle; (plural) epic poetry or poetry (in general)
+    \item[\textgreek{ἐραστής, ἐραστοῦ, ὁ}] a lover
+    \item[\textgreek{ἐραστός, ἐραστή, ἐραστόν}] beloved, lovely
+    \item[\textgreek{ἐράω}] love, be in love with
+    \item[\textgreek{ἐργάζομαι}] work, labour
+    \item[\textgreek{ἐργατικός, ἐργατική, ἐργατικόν}] working, industrious, diligent, active
+    \item[\textgreek{ἔργον, ἔργου, τό}] \marginnote{*}action, deed; act, work; activity, industry, labor; (concretely) fields, farms; task, function; problem, serious matter, difficulty, trouble, distress; finished work, product
+    \item[\textgreek{ἐρέω}] ask, enquire
+    \item[\textgreek{ἐριστικός, ἐριστική, ἐριστικόν}] quarrelsome, fond of contention or disputation, carping; eristic
+    \item[\textgreek{ἔρομαι, ἐρήσομαι, ἠρόμην, –––, –––, –––}] \marginnote{*}ask, enquire; ask someone about something (followed by two accusatives)
+    \item[\textgreek{ἔρχομαι, εἶμι/ἐλεύσομαι, ἦλθον, ἐλήλυθα, –––, –––}] \marginnote{*}come or go
+    \item[\textgreek{ἐρῶ}] see \textgreek{λέγω}
+    \item[\textgreek{ἐρωτάω}] ask
+    \item[\textgreek{ἐρώτησις, ἐρωτήσεως, ἡ}] question, query; posing of questions, questioning
+    \item[\textgreek{ἐσθίω}] eat
+    \item[\textgreek{ἐσθλός, ἐσθλή, ἐσθλόν}] good, brave; noble, wealthy, rich; fortunate, lucky; (neuter substantive) goods, possessions
+    \item[\textgreek{ἔσχατον, ἐσχάτου, τό}] extremity, edge, boundary, furthest edge
+    \item[\textgreek{ἔσχατος, ἐσχάτη, ἔσχατον}] outermost, furthest out or away; extreme, remote, far; last; least, basest, contemptible; lowest; extreme, last, final
+    \item[\textgreek{ἑταῖρος, ἑταίρου, ὁ}] \marginnote{*}companion, comrade, friend; follower, disciple; lover
+    \item[\textgreek{ἕτερος, ἑτέρα, ἕτερον}] \marginnote{*}the other (of two), one (of two); other; other than usual, different; other than should be, other than good, bad (often used as a euphemism instead of \textgreek{κακός})
+    \item[\textgreek{ἔτι}] \marginnote{*}yet, as yet, still
+    \item[\textgreek{ἔτος, ἔτους, τό}] \marginnote{*}a year
+    \item[\textgreek{εῦ}] \marginnote{*}well
+    \item[\textgreek{εὐδαιμονία, εὐδαιμονίας, ἡ}] prosperity, good fortune, wealth; well-being, happiness; (in philosophy) a successful life as a whole (different thinkers specified different elements in such a life, but agreed that an overall good life was an important human goal)
+    \item[\textgreek{εὐδοκιμέω}] be of good repute, to be held in esteem, honored, famous, popular
+    \item[\textgreek{εὐδόκιμος, εὐδόκιμον}] in good repute, honored, famous, glorious
+    \item[\textgreek{εὐδοξία, εὐδοξίας, ἡ}] good repute, credit, honor, glory
+    \item[\textgreek{Εὔδωρος, Εὐδώρου, ὁ}] Eudorus (a male name)
+    \item[\textgreek{εὐεργετέω}] benefit, do well (for or to), render a service, treat well
+    \item[\textgreek{εὐήθης, εὔηθες}] good, simple, honest; naive, simple, silly
+    \item[\textgreek{εὐθύς, εὐθεῖα, εὐθύ}] \marginnote{*}straight, direct; frank, straightforward
+    \item[\textgreek{εὐθύς}] \marginnote{*}\textit{adverb} directly, at once, immediately, straightaway; of course
+    \item[\textgreek{εὐλαβέομαι}] take precautions, pay attention, take care; be careful; hold in esteem, respect, honor
+    \item[\textgreek{εὐμάθεια, εὐμαθείας, ἡ}] ease of understanding; ease of teaching
+    \item[\textgreek{εὐπορέω}] prosper, thrive, be well off
+    \item[\textgreek{εὑρίσκω, εὑρήσω, ηὗρον/εὗρον, ηὕρηκα/εὕρηκα, εὕρημαι, εὑρέθην}] \marginnote{*}find, find out; discover, devise, invent
+    \item[\textgreek{εὐσταλής, εὐσταλές}] well-equipped; well-conducted, favorable; compact, well-packed; well-behaved, mannerly
+    \item[\textgreek{εὐτυχής, εὐτυχές}] well off, successful, lucky, fortunate, prosperous
+    \item[\textgreek{εὐτυχία, εὐτυχίας, ἡ}] good luck, success, prosperity
+    \item[\textgreek{εὐφημέω}] (literally) use words of good omen; (more commonly) be silent, be quiet (because the only way to make sure not to use the wrong words is to use no words!)
+    \item[\textgreek{ἐφεξῆς}] in succession, in order, in a row, one after another
+    \item[\textgreek{ἐχθρός, ἐχθρά, ἐχθρόν}] \marginnote{*}hated, hateful, detested; hostile, unfriendly
+    \item[\textgreek{ἔχω, ἕξω/σχήσω, ἔσχον, ἔσχηκα, ἔσχημαι, ἐσχέθην}] \marginnote{*}have, possess; hold; know, understand; consider; (with infinitive) be able to, have the ability to
+    \item[\textgreek{ἕως}] \marginnote{*}until; so long as, while, for the whole time that
+    \item[\textgreek{ἕωσπερ}] even until (strengthened form of \textgreek{ἕως})
+    \item[\textgreek{ζάω, ζήσω, ἔζησα, ἔζηκα, –––, –––}] \marginnote{*}live
+    \item[\textgreek{Ζεύς, Διός, ὁ}] Zeus
+    \item[\textgreek{ζέω}] boil, seethe
+    \item[\textgreek{ζητέω, ζητήσω, ἐζήτησα, ἐζήτηκα, ἐζήτημαι, ἐζητήθην}] \marginnote{*}seek, look for; inquire, investigate, examine
+    \item[\textgreek{ζήτησις, ζητήσεως, ἡ}] quest, inquiry, search, investigation; survey, inspection, review
+    \item[\textgreek{ζητητέος, ζητητέα, ζητητέον}] to be sought, deserving or needing to be sought, that should be sought
+    \item[\textgreek{ζητητικός, ζητητική, ζητητικόν}] disposed to search or inquire; searching, inquiring, investigative
+    \item[\textgreek{ᾗ}] which way, where, to where; in or at which place; wherefore; insofar as, as
+    \item[\textgreek{ἦ}] in truth, truly, certainly, undoubtedly
+    \item[\textgreek{ἤ}] \marginnote{*}or, otherwise; than, rather than; (repeated) either\dots or
+    \item[\textgreek{ἡγεμονία, ἡγεμονίας, ἡ}] guidance; command, authority, rule; leadership, supremacy, hegemony; empire; office, governmental office, magistracy
+    \item[\textgreek{ἡγεμών, ἡγεμόνος, ὁ/ἡ}] leader, guide; chief, commander; governor; emperor
+    \item[\textgreek{ἡγέομαι, ἡγήσομαι, ἡγησάμην, ἥγημαι, –––, –––}] \marginnote{*}guide, lead, go before; (logical) be antecedent or prior, precede; command, order
+    \item[\textgreek{ἡδέως}] happily, with pleasure, gladly; sweetly
+    \item[\textgreek{ἤδη}] \marginnote{*}by this time, before this, already
+    \item[\textgreek{ἡδύς, ἡδεῖα, ἡδύ}] \marginnote{*}sweet
+    \item[\textgreek{ἥκιστος, ἡκίστη, ἥκιστον}] very slight, least; very little, barely
+    \item[\textgreek{ἡλικία, ἡλικίας, ἡ}] period of life, age; period of time, time; generation; people of the same age, agemates, companions
+    \item[\textgreek{ἥλιος, ἡλίου, ὁ}] \marginnote{*}the sun; east; day
+    \item[\textgreek{ἡμαρτημένως}] mistakenly, in error
+    \item[\textgreek{ἡμέρα, ἡμέρας, ἡ}] \marginnote{*}day
+    \item[\textgreek{ἠμί}] I say
+    \item[\textgreek{ἥμισυς, ἡμίσεια, ἥμισυ}] half
+    \item[\textgreek{ἤν/ἐάν/ἄν}] \marginnote{*}if
+    \item[\textgreek{ἤπειρος, ἠπείρου, ἡ}] terra-firma, the land
+    \item[\textgreek{Ἡρακλέης, Ἡρακλέους, ὁ}] Heracles
+    \item[\textgreek{ἥρως, ἥρωος, ὁ}] warrior; hero; demigod
+    \item[\textgreek{ἤτοι}] indeed, certainly, surely
+    \item[\textgreek{ἥττων, ἧττον}] \marginnote{*}inferior, weaker, lesser, worse; smaller; fewer; less
+    \item[\textgreek{ἠώς, ἠοῦς, ἡ}] the morning red, daybreak, dawn
+    \item[\textgreek{θαλάττιος, (θαλαττία,) θαλάττιον}] of, in, on, or from the sea, belonging to the sea
+    \item[\textgreek{θαρραλέος, θαρραλέα, θαρραλέον}] bold, courageous, confident, daring; that can be dared or risk, lacking in danger, safe
+    \item[\textgreek{θαρρέω}] be daring, have courage, be confident
+    \item[\textgreek{θάρρος, θάρρους, τό}] courage, boldness, daring
+    \item[\textgreek{θαυμάζω, θαυμάσομαι, ἐθαυμασα, τεθαύμακα, τεθαύμασμαι, ἐθαυμάσθην}] \marginnote{*}marvel, admire, honor, venerate; (with interrogative or relative clause as object) marvel, wonder, be amazed
+    \item[\textgreek{θαυμαστός, θαυμαστή, θαυμαστόν}] marvelous, amazing, extraordinary; admirable, excellent; to be honored or venerated; strange, extravagant, absurd
+    \item[\textgreek{θεάομαι}] look on, gaze at, view, behold
+    \item[\textgreek{θεῖος, θεία, θεῖον}] \marginnote{*}of or from gods, sent by a god or gods, divine, sacred, holy; wondrous, anything more than human, excellent, beautiful, remarkable, marvellous
+    \item[\textgreek{Θεμιστοκλῆς, Θεμιστοκλέους, ὁ}] Themistocles (a male name)
+    \item[\textgreek{Θέογνις, Θεόγνιδος, ὁ}] Theognis (a male name)
+    \item[\textgreek{θεόμαντις, θεομάντεως, ὁ}] a prophet, seer, diviner
+    \item[\textgreek{θεός, θεοῦ, ὁ}] \marginnote{*}a god; (often in particular) Zeus
+    \item[\textgreek{θεραπεύω}] be an attendant, do service
+    \item[\textgreek{Θετταλός, Θετταλή, Θετταλόν}] Thessalian, from Thessaly
+    \item[\textgreek{Θηβαῖος, Θηβαία, Θηβαῖον}] Theban; from Thebes
+    \item[\textgreek{θῆλυς, θήλεια, θῆλυ}] female
+    \item[\textgreek{θνήσκω, θανοῦμαι, -έθανον, τέθνηκα, –––, –––}] \marginnote{*}die, be dying
+    \item[\textgreek{Θουκυδίδης, Θουκυδίδου, ὁ}] Thucydides (a male name)
+    \item[\textgreek{ἰατρός, ἰατροῦ, ὁ}] one who heals: a doctor, physician or surgeon
+    \item[\textgreek{ἱέρεια, ἱερείας, ἡ}] a priest, sacrificer
+    \item[\textgreek{ἱερεύς, ἱερέως, ὁ}] a priest, sacrificer
+    \item[\textgreek{ἱερός, ἱερά, ἱερόν}] \marginnote{*}super-human, mighty, divine, wonderful
+    \item[\textgreek{ἵζω}] make sit, seat, place
+    \item[\textgreek{ἵημι, ἥσω, ἧκα, -εἷκα, εἷμαι, -εἵθην}] \marginnote{*}set going, put in motion; shoot, throw, fling; (middle) hasten, rush, hurl oneself
+    \item[\textgreek{ἱκανός, ἱκανή, ἱκανόν}] \marginnote{*}sufficient, adequate, suitable, convenient; suitable, competent, capable; able, powerful
+    \item[\textgreek{ἱμάτιον, ἱματίου, τό}] an outer garment, a cloak or mantle
+    \item[\textgreek{ἵνα}] \marginnote{*}(poetic) in that place, there; (in Attic prose) in order that, so that (introducing a purpose clause)
+    \item[\textgreek{ἱππεύς, ἱππέως, ὁ}] \marginnote{*}a horseman
+    \item[\textgreek{ἱππικός, ἱππική, ἱππικόν}] knight, horseman; member of the equestrian class (in Greece or Rome)
+    \item[\textgreek{ἵππος, ἵππου, ὁ/ἡ}] \marginnote{*}a horse, mare
+    \item[\textgreek{Ἰσμηνίας, Ἰσμηνίου, ὁ}] Ismenias (a male name)
+    \item[\textgreek{ἴσος, ἴση, ἴσον}] \marginnote{*}equal; balanced, fair, impartial, just
+    \item[\textgreek{ἵστημι, στήσω, ἔστησα/ἔστην, ἕστηκα, ἕσταμαι, ἐστάθην}] \marginnote{*}make stand (up), cause to stand (up); establish; (middle and intransitive) stand, stand up
+    \item[\textgreek{ἰσχυρός, ἰσχυρά, ἰσχυρόν}] \marginnote{*}strong, robust, vigorous; violent, excessive, strong
+    \item[\textgreek{ἰσχύς, ἰσχύος, ἡ}] strength
+    \item[\textgreek{ἴσως}] \marginnote{*}equally, in like manner; fairly, equitably; probably, perhaps
+    \item[\textgreek{καθά}] in the way in which, as, according as
+    \item[\textgreek{καθάπερ}] exactly as (strengthened form of \textgreek{καθά})
+    \item[\textgreek{καί}] \marginnote{*}and; evan, also; (doubled) both\dots and
+    \item[\textgreek{καίπερ}] although, albeit, even though
+    \item[\textgreek{καίτοι}] \marginnote{*}and indeed, and further
+    \item[\textgreek{κακηγορέω}] speak ill of, abuse, slander
+    \item[\textgreek{κακία, κακίας, ἡ}] evil, wickedness, vice; ineptitude, incapacity; cowardice, faint-heartedness; dishonor, infamy; misfortune, suffering, evil suffered
+    \item[\textgreek{κακοδαίμων, κακόδαιμον}] possessed by an evil spirit; ill-fated, ill-starred, miserable, wretched
+    \item[\textgreek{κακός, κακή, κακόν}] \marginnote{*}bad, evil, wicked; unlucky, harmful, unfavorable; base, cowardly; ugly, shabby; ignoble, poor, wretched, unfortunate
+    \item[\textgreek{καλέω, καλῶ, ἐκάλεσα, κέκληκα, κέκλημαι, ἐκλήθην}] \marginnote{*}call, summon, invite; summon to court, sue; call by name, name; request, demand
+    \item[\textgreek{κάλλος, κάλλους, τό}] beauty; (abstract for concrete, usually plural) beautiful things, beauties, splendors
+    \item[\textgreek{καλός, καλή, καλόν}] \marginnote{*}beautiful, fine (in appearance); noble, honorable, virtuous, fine (in a moral sense)
+    \item[\textgreek{κἄν}] \marginnote{*}(crasis for καὶ ἐάν) and if, even if, although
+    \item[\textgreek{καρτέρημα, καρτερήματος, τό}] an act of endurance
+    \item[\textgreek{κατά}] \marginnote{*}\textit{preposition with genitive or accusative} (with genitive) down, downwards, down over; against, down on; upon, in respect of, concerning; (with accusative) down, downwards; over, throughout (a region or space); opposite, over against; distributively, by; for, after, in pursuit of; according to
+    \item[\textgreek{καταγέλαστος, καταγέλαστον}] ridiculous, absurd, laughable
+    \item[\textgreek{καταγελάω}] laugh at, jeer, mock
+    \item[\textgreek{καταγιγνώσκω}] recognize, judge, consider; despise, disregard, look down on; accuse, blame (judge negatively); condemn
+    \item[\textgreek{κατάγνυμι}] break in pieces, shatter, shiver, crack
+    \item[\textgreek{κατάγω}] lead down, lower, bring, guide; spin, spin out (i.e., draw or guide a thread down)
+    \item[\textgreek{κατακαλύπτω}] cover, cover up, veil, hide; (perhaps) blindfold
+    \item[\textgreek{κατακερματίζω}] divide, chop up
+    \item[\textgreek{καταμέμφομαι}] blame, accuse, reproach; distrust
+    \item[\textgreek{καταπίπτω}] fall, fall down, tumble; fall (into a state or condition), end up (a certain way or in a certain state)
+    \item[\textgreek{καταρτύω}] prepare, equip; train, educate
+    \item[\textgreek{κατασημαίνω}] signify; (middle) seal, mark (i.e., put a mark or seal on)
+    \item[\textgreek{κατεπάδω}] bewitch with magical songs or poems; bewitch
+    \item[\textgreek{κατέχω}] hold, arrange; hold back; grasp; control, rule; conquer, possess; contain, include
+    \item[\textgreek{κατήκοος, κατήκοον}] listening; docile, obedient; subservient, subject (plus genitive or dative)
+    \item[\textgreek{κατήκους, κατήκουν}] (contracted forms of \textgreek{κατήκοος})
+    \item[\textgreek{κατορθόω}] set upright, erect; accomplish successfully, complete successfully, succeed (at)
+    \item[\textgreek{κεῖμαι, κείσομαι}] \marginnote{*}lie, be situated; be laid up in store; be set up, be established or ordained (often used as the passive of \textgreek{ἵστημι}
+    \item[\textgreek{κελεύω, κελεύσω, ἐκέλευσα, κεκέλευκα, κεκέλευσμαι, ἐκελεύσθην}] \marginnote{*}urge or drive on, urge, exhort; bid, command, order
+    \item[\textgreek{κερματίζω}] cut into pieces; dissect, distinguish
+    \item[\textgreek{κινδυνεύω}] (literal) run a risk; be in danger; (usually) be likely that, be a chance that, be probably that (with infinitive)
+    \item[\textgreek{Κλεόφαντος, Κλεοφάντου, ὁ}] Cleophantus (a male name)
+    \item[\textgreek{κοινῃ̂}] in common, together; by common consent; publicly
+    \item[\textgreek{κοινός, κοινή, κοινόν}] \marginnote{*}common, shared in common, of common ownership; public, well-known, customary, normal, usual; impartial, unbiased, balanced; affable, kind, courteous
+    \item[\textgreek{κόσμιος, κοσμία, κόσμιον}] well-ordered, regular, moderate
+    \item[\textgreek{κραιπνός, κραιπνή, κραιπνόν}] rushing, raging, violent; impetuous, rash
+    \item[\textgreek{κτάομαι, κτήσομαι, ἐκτησάμην, κέκτημαι, –––, –––}] \marginnote{*}get, gain, acquire, procure; (in perfect tenses) possess, have (i.e., have acquired and thus possess)
+    \item[\textgreek{κύκλος, κύκλου, ὁ}] \marginnote{*}a ring, circle, round
+    \item[\textgreek{κυρίως}] \marginnote{*}with complete authority, as a master; authoritatively; duly, legitimately; exactly, with precision; properly; in a precise sense
+    \item[\textgreek{κωλύω, κωλύσω, ἐκώλυσα, κεκώλυκα, κεκώλυμαι, ἐκωλύθην}] \marginnote{*}hinder, oppose, prevent; forbid
+    \item[\textgreek{Λάκων, Λάκωνος}] Spartan, Laconian; (substantive) a Spartan, a Laconian
+    \item[\textgreek{λαμβάνω, λήψομαι, ἔλαβον, εἴληφα, εἴλημμαι, ἐλήφθην}] \marginnote{*}take, seize; invade, take over; catch, surprise, discover, find; perceive, understand, comprhend, consider; receive, obtain, reach, gain
+    \item[\textgreek{λανθάνω, λήσω, ἔλαθον, λέληθα, λέλησμαι, ἐλήσθην}] \marginnote{*}escape notice, be unknown, unseen, unnoticed (often with supplementary participle); (in a reflexive sense even without explicit reflexive pronoun) be unaware, not realize, not know (often with supplementary participle)
+    \item[\textgreek{Λάρισα, Λαρίσης, ἡ}] Larissa (a Greek city in Thessaly)
+    \item[\textgreek{Λαρισαῖος, Λαρισαία, Λαρισαῖον}] Larissaean, of or from Larissa
+    \item[\textgreek{λέγω, λέξω/ἐρῶ, ἔλεξα/εἶπον, εἴρηκα, λέλεγμαι/εἴρημαι, ἐλέχθην/ἐρρήθην}] \marginnote{*}say, speak, tell
+    \item[\textgreek{λευκός, λευκή, λευκόν}] light, bright, brilliant; white
+    \item[\textgreek{λιμός, λιμοῦ, ὁ}] hunger, famine
+    \item[\textgreek{λογίζομαι}] count, reckon, calculate, compute; consider, reflect, think
+    \item[\textgreek{λογισμός, λογισμοῦ, ὁ}] a counting, reckoning, calculation, computation; an account, a rational account, the result of a process of reasoning; the process of reasoning, an accounting; reflection, thought, argument
+    \item[\textgreek{λόγος, λόγου, ὁ}] \marginnote{*}word, speech; message; assertion, statement; conversation; oration; narrative; thought, reason; opinion; account, consideration
+    \item[\textgreek{λοιπός, λοιπή, λοιπόν}] \marginnote{*}remaining, the rest; (of time) remaining, future; (substantive of people) descendants, posterity
+    \item[\textgreek{Λυσίμαχος, Λυσιμάχου, ὁ}] Lysimachus (a male name)
+    \item[\textgreek{λυσιτελέω}] be useful or advantageous; be appropriate; be preferable
+    \item[\textgreek{λυσιτελής, λυσιτελές}] useful, profitable, advantageous
+    \item[\textgreek{λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην}] \marginnote{*}loosen, untie, undo; dissolve, resolve, separate; let go, liberate, set free, ransom; break down, wear out, exhause, weaken, destroy
+    \item[\textgreek{λωβάομαι}] mistreat, offend, outrage; mock, scorn; dishonor, corrupt; damage, ruin
+    \item[\textgreek{λώβη, λώβης, ἡ}] outrage, offense, mistreatment; shame, dishonour
+    \item[\textgreek{μά}] \textit{with accusative} by, in the name of (used in oaths)
+    \item[\textgreek{μάθημα, μαθήματος, τό}] learning, knowledge, lesson; a science, discipline, subject of study; teaching, doctrine
+    \item[\textgreek{μάθησις, μαθήσεως, ἡ}] learning, the acquisition of knowledge; teaching, education, instruction
+    \item[\textgreek{μαθητής, μαθητοῦ, ὁ}] a learner, pupil, student
+    \item[\textgreek{μαθητός, μαθητή, μαθητόν}] learned, taught; that can be learned, teachable
+    \item[\textgreek{μαίνομαι}] rage, be furious
+    \item[\textgreek{μακάριος, μακαρία, μακάριον}] blessed, happy, successful; lucky, prosperous
+    \item[\textgreek{μακρός, μακρή, μακρόν}] \marginnote{*}(of size) vast, long, wide, big; tall, high; deep; (of time) lasting, enduring, long
+    \item[\textgreek{μαλακός, μαλακή, μαλακόν}] soft; gentle, tender, kind; faint-hearted, cowardly
+    \item[\textgreek{μάλιστα}] \marginnote{*}very much, exceedingly, especially; in the first place, first of all; certainly, surely, without a doubt; precisely, exactly, just; especially, particularly
+    \item[\textgreek{μα̂λλον}] \marginnote{*}more, rather
+    \item[\textgreek{μανθάνω, μαθήσομαι, ἔμαθον, μεμάθηκα, –––, –––}] \marginnote{*}learn, find out, come to know or understand; become accustomed, get used to; ascertain, take note, observe; realize, recognize, understand
+    \item[\textgreek{μανία, μανίας, ἡ}] madness, frenzy
+    \item[\textgreek{μάντις, μάντεως, ὁ}] one who divines, a seer, prophet
+    \item[\textgreek{μεγαλοπρέπεια, μεγαλοπρεπείας, ἡ}] grandeur, nobility; magnificence, generosity; extravagance; (of style) elevation
+    \item[\textgreek{μεγαλοπρεπής, μεγαλοπρεπές}] befitting a great person, magnificent, extravagant, splendid, impressive
+    \item[\textgreek{μέγας, μεγάλη, μέγα}] \marginnote{*}big, large; great, powerful, mighty; (of age) grown, adult, mature; old, elder
+    \item[\textgreek{μέγεθος, μεγέθους, τό}] \marginnote{*}greatness, magnitude, size, height, stature
+    \item[\textgreek{μελετάω}] care for, attend to
+    \item[\textgreek{μελέτη, μελέτης, ἡ}] care, attention
+    \item[\textgreek{μέλιττα, μελίττης, ἡ}] a bee
+    \item[\textgreek{μέλλω, μελλήσω, ἐμέλλησα, –––, –––, –––}] \marginnote{*}think of doing, intend to do; be about to do (often used with an infinitive to form a periphrastic future, like \textit{I'm going to read that book.} instead of \textit{I will read that book.}) in English.
+    \item[\textgreek{μέλος, μέλους, τό}] a limb; a part; song, composition, poem
+    \item[\textgreek{μέλω}] care about, worry about, pay attention to; interest, be important; (used impersonally in the third person singular \textgreek{μέλει}) it matters, it is important, it concerns (often plus a dative of who it matters to)
+    \item[\textgreek{μέν}] \marginnote{*}(usually paired with δέ or another contrasting item) on the one hand; (by itself) indeed (and in numerous uses with other particles)
+    \item[\textgreek{μένος, μένους, τό}] might, force, strength, prowess, courage
+    \item[\textgreek{μέντοι}] \marginnote{*}certainly, surely, in fact, yes, indeed; but, however; well, then, therefore
+    \item[\textgreek{μένω, μενῶ, ἔμεινα, μεμένηκα, –––, –––}] \marginnote{*}stay, remain; endure; await
+    \item[\textgreek{Μένων, Μένωνος, ὁ}] Meno (a male name)
+    \item[\textgreek{μέρος, μέρους, τό}] \marginnote{*}a part; body part, limb; piece of land, territory, plot, quarter; category, class; task, business, job, matter, affair
+    \item[\textgreek{μέσος, μέση, μέσον}] \marginnote{*}in the middle, in the center; central, middle, intermediate; moderate, average, middling
+    \item[\textgreek{μεστός, μεστή, μεστόν}] full, filled, filled full
+    \item[\textgreek{μετά}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) in the midst of, among; in common with, along with; with, by means of; (with dative) among, in company with, in among, in the midst of; (with accusative) into the middle of, coming among; in pursuit of, after; after, next after, behind; according to
+    \item[\textgreek{μεταβαίνω}] change place or position; leave, depart, pass; change, alter, exchange; (middle) exchange, barter, traffic
+    \item[\textgreek{μεταδίδωμι}] give part of, give a share of; cause to participate, make part of
+    \item[\textgreek{μεταχειρίζω}] govern, administer; engage in, perform; (middle) take in hand, manage; have in hand, administer; practice cultivate; treat, care for
+    \item[\textgreek{μέτειμι}] go after, pursue; go behind, follow
+    \item[\textgreek{μή}] \marginnote{*}not
+    \item[\textgreek{μηδέ}] \marginnote{*}but not; and not; nor; neither, not even
+    \item[\textgreek{μηδείς, μηδεμία, μηδέν}] \marginnote{*}no one, not one; no; nothing
+    \item[\textgreek{μη̂κος, μήκους, τό}] length; stature, height; duration
+    \item[\textgreek{μήν}] \marginnote{*}truly, surely, indeed, in fact (usually emphasizing a preceding particle, often not translated as such)
+    \item[\textgreek{μήπω}] not yet
+    \item[\textgreek{μήτε}] \marginnote{*}and not; neither; (repeated) neither\dots nor
+    \item[\textgreek{μικρός, μικρά, μικρόν}] \marginnote{*} small (in size, duration, value, interest, importance, etc.); e.g., little, brief, of little importance, of little interest (\textit{also written} with stem \textgreek{σμικρ}-)
+    \item[\textgreek{μιμνήσκω}] remind, recall to the mind; make mention of, mention
+    \item[\textgreek{μισθός, μισθοῦ, ὁ}] wages, pay, hire
+    \item[\textgreek{μνήμη, μνήμης, ἡ}] a memory; memory (as a faculty); a reminder, (written) record; precept
+    \item[\textgreek{μνήμων, μνῆμον}] mindful, remembering; one who has a good memory; archivist, secretary, notary
+    \item[\textgreek{μοῖρα, μοίρας, ἡ}] a part, portion, share; fate, destiny
+    \item[\textgreek{μόνιμος, (μονίμη,) μόνιμον}] stable, remaining in place, fixed; (of things) solid, durable; (of people) firm, constant
+    \item[\textgreek{μόνος, μόνη, μόνον}] \marginnote{*}only, alone, isolated; sole, unique, exclusive
+    \item[\textgreek{μορέω}] toil, take pains to do; (passive) be tormented
+    \item[\textgreek{μόριον, μορίου, τό}] part, portion; body part, limb; constituent part, essential element
+    \item[\textgreek{μουσική, μουσικῆς, ἡ}] music, art, poetry, literature; (any art or skill where the Muses preside)
+    \item[\textgreek{μουσικός, μουσική, μουσικόν}] of or for music, musical; poetic; related to literature
+    \item[\textgreek{μοχθηρός, μοχθηρά, μοχθηρόν}] suffering hardship, unfortunate, unhappy; causing hardship, painful, grievous, laborious; of inferior quality, in a bad state or condition, bad;  (moral) bad, wicked, vicious;(logical) faulty, erroneous, fallacious
+    \item[\textgreek{μυέω, μυήσω, ἐμύησα, μεμύηκα, μεμύημαι, ἐμυήθην}] initiate into the mysteries
+    \item[\textgreek{μῦθος, μύθου, ὁ}] word, speech (opposed to deed); counsel , advice, command; a tale, story, narrative, legend, myth (opposed to historical account)
+    \item[\textgreek{μυριάκις}] (literally) ten thousand times; (often) countless times
+    \item[\textgreek{μυστήριον, μυστηρίου, τό}] a mystery or secret doctrine;
+    \item[\textgreek{μῶν}] (introducing a question that expects a negative answer) surely not? it isn't, is it?; (introducting a tentative question) is it perhaps?
+    \item[\textgreek{ναί}] \marginnote{*}yes; of course, certainly
+    \item[\textgreek{ναρκάω}] become numb, lose feeling; become paralyzed
+    \item[\textgreek{νάρκη, νάρκης, ἡ}] torpedo fish, electric ray; numbness, deadness
+    \item[\textgreek{ναρκόω}] make numb, paralyze
+    \item[\textgreek{ναῦς, νεώς, ἡ}] \marginnote{*}a ship, boat
+    \item[\textgreek{νέος, νέα, νέον}] \marginnote{*}young, youthful; new, fresh, recent; strange, new
+    \item[\textgreek{νεωστί}] lately, just now
+    \item[\textgreek{νή}] (affirmative particle with accusative) (yes) by; (certainly) by
+    \item[\textgreek{νόημα, νοήματος, τό}] that which is perceived, a perception; thought; purpose, design, intention; understanding, mind
+    \item[\textgreek{νόος, νόου, ὁ}] \marginnote{*}mind; one's mind, purpose, intention; perception, sense
+    \item[\textgreek{νοῦς, νοῦ, ὁ}] \marginnote{*}(contracted version of \textgreek{νόος}) mind; one's mind, purpose, intention; perception, sense
+    \item[\textgreek{νῦν}] \marginnote{*}now, at this very time, at this moment
+    \item[\textgreek{νυνδή/νῦν δή}] right now, just now
+    \item[\textgreek{νυνί}] \marginnote{*}now, at this very time, at this moment
+    \item[\textgreek{Ξανθίας, Ξανθίου, ὁ}] Xanthias (a male name)
+    \item[\textgreek{Ξάνθιππος, Ξανθίππου, ὁ}] Xanthippus (a male name)
+    \item[\textgreek{ξένος, ξένου, ὁ}] \marginnote{*}stranger, foreigner; guest or host; strange, unusual, novel, astonishing
+    \item[\textgreek{ξύν}] \marginnote{*}\textit{adverb and preposition with dative} (adverb) together, all at once, at the same time; besides, also; (with dative) with, along with, in company with, together with
+    \item[\textgreek{ὁ, ἡ, τό}] \marginnote{*}the; that
+    \item[\textgreek{ὀγκώδης, ὀγκώδες}] swelling, rounded; swollen, inflated; solemn, lofty
+    \item[\textgreek{ὅδε, ἥδε, τόδε}] \marginnote{*}this, these
+    \item[\textgreek{ὁδός, ὁδοῦ, ἡ}] \marginnote{*}street, road; way, journey; mode, manner, method, system, procedure
+    \item[\textgreek{οῖδα, εἴσομαι, –––, –––, –––, –––}] \marginnote{*}know; know how (plus infinitive)
+    \item[\textgreek{οἴκαδε}] one's home, home, homewards
+    \item[\textgreek{οἰκεῖος, (οἰκεία,) οἰκεῖον}] \marginnote{*}in or of the house, domestic; of the same family, related; friendly; personal, private
+    \item[\textgreek{οἰκέω, οἰκήσω, ᾤκησα, ᾤκηκα, ᾤκημαι, ᾠκήθην}] \marginnote{*}inhabit, occupy; live, reside, dwell; administer, rule, govern
+    \item[\textgreek{οἰκία, οἰκίας, ἡ}] \marginnote{*}a building, house, dwelling
+    \item[\textgreek{οἰκογενής, οἰκογενές}] born in the house, domestic
+    \item[\textgreek{οἴομαι/οἶμαι, οἰήσομαι, –––, –––, –––, ᾠήθην}] \marginnote{*}suppose, think, deem, imagine
+    \item[\textgreek{οἶος, οἴα, οἶον}] alone, lone; lonely
+    \item[\textgreek{οἷος, οἵα, οἷον}] \marginnote{*}such as, what sort, manner, nature, type, or kind
+    \item[\textgreek{οἷός τε, οἵά τε, οἷόν τε}] \marginnote{*}it is possible, one may
+    \item[\textgreek{οἴχομαι}] go, move, go away, leave; (usually present with perfect meaning and imperfect with pluperfect meaning) have gone away, have left, have departed; (euphemistically) have died, be dead; (figuratively) be destroyed, be ruined
+    \item[\textgreek{ὀκτώ}] \marginnote{*}eight
+    \item[\textgreek{ὀκτώπους, ὀκτώπουν}] eight feet long, broad, or high
+    \item[\textgreek{ὀλίγος, ὀλίγη, ὀλίγον}] \marginnote{*}few, little, scanty, small
+    \item[\textgreek{ὅλος, ὅλη, ὅλον}] \marginnote{*}whole, entire, complete
+    \item[\textgreek{Ὅμηρος, Ὁμήρου, ὁ}] Homer;
+    \item[\textgreek{ὅμοιος, ὁμοία, ὅμοιον}] \marginnote{*}like, resembling; equal, a match (for); shared, common; like in mind, agreeing with
+    \item[\textgreek{ὁμολογέω}] agree with (plus dative); allow, admit, concede, grant; agree to do, promise to do
+    \item[\textgreek{ὁμονοέω}] get along, comply, agree; agree, be likeminded
+    \item[\textgreek{ὅμως}] \marginnote{*}all the same, nevertheless, nothwithstanding, still
+    \item[\textgreek{ὄναρ, –––, τό}] (only appears in nominative and accusative singular) a dream, vision in sleep
+    \item[\textgreek{ὀνέομαι}] profit (from), take advantage (with genitive)
+    \item[\textgreek{ὀνίνημι, ὀνήσω, ὤνησα}] benefit, help, be useful (to), be beneficial (to)
+    \item[\textgreek{ὄνομα, ὀνόματος, τό}] \marginnote{*}name; word, name (for something); noun, substantive
+    \item[\textgreek{ὀνομάζω, ὀνομάσω, ὠνόμασα, ὠνόμακα, ὠνόμασμαι, ὠνομάσθην}] \marginnote{*}name or speak of by name, call or address by name
+    \item[\textgreek{ὅπῃ}] where; in what way, how
+    \item[\textgreek{ὅποι}] to which place, whither, (to) where
+    \item[\textgreek{ὁποῖος, ὁποία, ὁποῖον}] of what sort, kind, type, or quality; (with an indefinite pronoun) whichever, whoever, whatever
+    \item[\textgreek{ὁπότερος, ὁποτέρα, ὁπότερον}] who or which (of two, of the two)
+    \item[\textgreek{ὁποτεροσοῦν, ὁποτεραοῦν, ὁποτερονοῦν}] whichever (of two, or the two); either (of two, of the two)
+    \item[\textgreek{ὅπως}] \marginnote{*}as, in the way that, in the manner of; that; (with a superlative) as X as possible, the X-est possible
+    \item[\textgreek{ὁπωσοῦν}] in any way whatever, in some way or other
+    \item[\textgreek{ὁράω, ὄψομαι, εἶδον, ἑόρακα/ἑώρακα, ἑώραμαι/ὦμμαι, ὤφθην}] \marginnote{*}see
+    \item[\textgreek{ὀρθός, ὀρθή, ὀρθόν}] \marginnote{*}straight, upright; in a straight line, straight; intact, safe, prosperous, happy; upright, just; correct, exact, true, veridical
+    \item[\textgreek{ὀρθότης, ὀρθότητος, ἡ}] upright posture, position, state, or stance; correctness, exactitude, propriety
+    \item[\textgreek{ὀρθόω}] set straight, straighten; raise, lift up; lead, guide, govern (well or rightly)
+    \item[\textgreek{ὅς, ἥ, ὅ}] \marginnote{*}(in Homeric Greek) this, that; (classical Greek and later) who, which, that
+    \item[\textgreek{ὅσιος, ὁσία, ὅσιον}] hallowed, divinely sanctioned, permitted by divine law; pious, devout, religious
+    \item[\textgreek{ὁσιότης, ὁσιότητος, ἡ}] piety, holiness
+    \item[\textgreek{ὁσιόω}] make holy, purify, set free from guilt by offerings
+    \item[\textgreek{ὀσμή, ὀσμῆς, ἡ}] a smell, scent, odor
+    \item[\textgreek{ὅσος, ὅση, ὅσον}] \marginnote{*}as great as, as much as; how great, how much; as many as; how many
+    \item[\textgreek{ὅσπερ, ἥπερ, ὅπερ}] \marginnote{*}the very person who, the very thing which
+    \item[\textgreek{ὅστις, ἥτις, ὅ τι}] \marginnote{*}any one who, anything which; whoever, whatever, whichever
+    \item[\textgreek{ὁστισοῦν, ἡτισοῦν, ὁτιοῦν}] which(so)ever, what(so)ever; every kind of, every (a more indefinite form of \textgreek{ὅστις})
+    \item[\textgreek{ὅταν}] \marginnote{*}whenever
+    \item[\textgreek{ὅτε}] \marginnote{*}when
+    \item[\textgreek{ὅτι}] \marginnote{*}that; because; given that, insofar as; (with superlatives) as X as possible, the X-est possible
+    \item[\textgreek{οὐ, οὐκ, οὐχ}] \marginnote{*}not
+    \item[\textgreek{οὗ}] where (either of state or of motion)
+    \item[\textgreek{οὐδαμός, οὐδαμή, οὐδαμόν}] not even one, no one; (in plural) none; of no account or value
+    \item[\textgreek{οὐδαμοῦ}] nowhere, in no place
+    \item[\textgreek{οὐδέ}] \marginnote{*}and not, nor; neither, not even; not at all; but not
+    \item[\textgreek{οὐδείς, οὐδεμία, οὐδέν}] \marginnote{*}no one, none; no
+    \item[\textgreek{οὐδέποτε}] and not ever; nor ever, not even ever; never
+    \item[\textgreek{οὐδέτερος, οὐδετέρα, οὐδέτερον}] not either, neither of the two
+    \item[\textgreek{οὐκέτι}] \marginnote{*}no more, no longer, no further
+    \item[\textgreek{οὔκουν}] certainly not, in no way; then not, therefore not; (in questions, expecting a positive response) Isn't it (the case) that\dots ? Surely not\dots ?
+    \item[\textgreek{οὐκοῦν}] \marginnote{*}well then, then, hence, therefore; (in responses) certainly, yes
+    \item[\textgreek{οῦν}] \marginnote{*}really, at all events; then, therefore
+    \item[\textgreek{οὔπω}] not yet
+    \item[\textgreek{οὐσία, οὐσίας, ἡ}] \marginnote{*}(a person's or family's) property; being, existence; the essence, or nature (of something)
+    \item[\textgreek{οὔτε}] \marginnote{*}and not; (repeated) neither\dots nor
+    \item[\textgreek{οὔτις, οὔτι}] no one or nobody; nothing
+    \item[\textgreek{οὗτος, αὕτη, τοῦτο}] \marginnote{*}this, these; 
+    \item[\textgreek{οὕτως}] \marginnote{*}in this way or manner, so, thus
+    \item[\textgreek{οὑτωσί}] \marginnote{*}strengthened form of \textgreek{οὕτως}
+    \item[\textgreek{ὄψις, ὄψεως, ἡ}] look, appearance, aspect; countenance, face; a sight, something seen; a view, sight; eyesight, vision
+    \item[\textgreek{παιδεύω}] bring up, rear, nurture; (usually) educate, instruct, teach
+    \item[\textgreek{παίζω}] play, amuse oneself; play (an instrument); make a joke, jest; make a joke of, mock, deride
+    \item[\textgreek{παῖς, παιδός, ὁ/ἡ}] \marginnote{*}a child; a slave (of any age)
+    \item[\textgreek{πάλαι}] long ago, in olden time, in days of yore, in time gone by
+    \item[\textgreek{παλαιός, παλαιά, παλαιόν}] \marginnote{*}ancient, archaic; old, elderly, ancient
+    \item[\textgreek{παλαίω, παλαίσω, ἐπάλαισα}] wrestle, compete at wrestling
+    \item[\textgreek{πάλη, πάλης, ἡ}] wrestling; battle
+    \item[\textgreek{πάλιν}] \marginnote{*}back, backwards
+    \item[\textgreek{πάλλω}] shake, brandish; handle; shake lots, draw lots
+    \item[\textgreek{πάμπολυς, παμπόλλη, πάμπολυ}] very numerous, abundant; very large
+    \item[\textgreek{πανοῦργος, πανοῦργον}] ready to do anything; wicked, knavish, villanous
+    \item[\textgreek{παντάπασι}] all in all, altogether, wholly, absolutely
+    \item[\textgreek{πανταχῇ}] everywhere, in every place; from all sides; toward every place; in every manner, in whatever manner; completely, totally
+    \item[\textgreek{πανταχοῦ}] everywhere, in every place; toward all places, toward every place; in every way, totally, completely
+    \item[\textgreek{παντελής, παντελές}] all-complete, absolute, complete, entire
+    \item[\textgreek{πάντῃ}] everywhere, in every place; totally, completely, quite
+    \item[\textgreek{παντοδαπός, παντοδαπή, παντοδαπόν}] of every kind, of all sorts, manifold
+    \item[\textgreek{πάντως}] \marginnote{*}altogether;
+    \item[\textgreek{πάνυ}] \marginnote{*}completely, totally, quite, absolutely, truly, indeed, exactly, very
+    \item[\textgreek{παρά}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) from the side of; (with dative) beside, alongside of; (with accusative) to the side of, (with or in motion) alongside of
+    \item[\textgreek{παραγίγνομαι}] be close, be present; happen, occur (plus a dative); help, bring help, give aid; turn up, arrive, come close
+    \item[\textgreek{παράδειγμα, παραδείγματος, τό}] pattern, model, example; advice, admonition, lesson; proof, demonstration, argument
+    \item[\textgreek{παραδίδωμι}] give or hand over (to another), entrust; leave (to someone) as inheritance, transmit; assign (as a duty); hand over, consign (to someone or something)
+    \item[\textgreek{παραδοτός, παραδοτή, παραδοτόν}] that can be transmitted, teachable
+    \item[\textgreek{παράκαθέζομαι}] sit beside, sit nearby
+    \item[\textgreek{παραλαμβάνω}] take, capture, seize control, conquer; take charge or assume the care of; inherit, receive, accept (i.e., take from others); receive by hearsay, hear something said, get to know; learn
+    \item[\textgreek{παραλείπω}] leave on one side, leave remaining, leave behind; spare, leave intact; stop, abstain; omit, neglect
+    \item[\textgreek{παραληπτός, παραληπτή, παραληπτόν}] that can be received or learned; acceptable, receivable, admissible
+    \item[\textgreek{Πάραλος, Παράλου, ὁ}] Paralos (a male name)
+    \item[\textgreek{παραμένω}] stand close by, remain close, not abandon; remain at one's post, stand firm, not yield, resist; persist, persevere; (of things) endure, not fade; (of people) survive, remain alive
+    \item[\textgreek{παράπαν}] totally, quite, altogether, absolutely; (with negative) not at all, really not, absolutely not
+    \item[\textgreek{παρατείνω}] stretch out, extend, unfold; draw out, postpone; (in geometry) construct (a figure) along (\textgreek{παρά}) (a line)
+    \item[\textgreek{πάρειμι}] \marginnote{*}be present, be beside, be near; (of things) be ready, be at the disposal of (plus an optional dative of who the thing belongs to); (impersonal πάρεστι) it depends (plus dative); τὰ παρόντα present circumstances; (adverbial expression) τὸ παρόν just now
+    \item[\textgreek{παρέχω, παρέξω/παρασχήσω, παρέσχον, παρέσχηκα, παρέσχημαι, παρεσχέθην}] \marginnote{*}hold beside, hold in readiness; furnish, provide, supply
+    \item[\textgreek{πᾶς, πᾶσα, πᾶν}] \marginnote{*}all, the whole
+    \item[\textgreek{πάσσω}] sprinkle
+    \item[\textgreek{πάσχω, πείσομαι, ἔπαθον, πέπονθα, –––, –––}] \marginnote{*}suffer, endure; experience; (plus adverb) be treated in a certain way
+    \item[\textgreek{πατήρ, πατρός, ὁ}] \marginnote{*}a father
+    \item[\textgreek{πατρικός, πατρική, πατρικόν}] derived from one's father, paternal; hereditary
+    \item[\textgreek{παύω, παύσω, ἔπαυσα, πέπαυκα, πέπαυμαι, ἐπαύθην}] \marginnote{*}put an end to, make cease, stop; (intransitive, usually middle or passive) stop, cease, quit, finish; (with a supplementary particple) refrain from, cease from, stop X-ing
+    \item[\textgreek{πείθω, πείσω, ἔπεισα, πέποιθα, πέπεισμαι, ἐπείσθην}] \marginnote{*}persuade, convince, induce; (intransitive in perfect tenses) be convinced, be confident, have faith; obey, pay attention (plus dative); believe, be confident in, give credence to (plus dative)
+    \item[\textgreek{πειράω, πειράσω, ἐπείρασα, πεπείρακα, πεπείραμαι, ἐπειράθην}] \marginnote{*}(often middle as well as active with same meanings) test, make a test of, make an attempt on; attempt, endeavor, try
+    \item[\textgreek{πέμπω, πέμψω, ἔπεμψα, πέπομφα, πέπεμμαι, ἐπέμφθην}] \marginnote{*}send, dispatch; discharge, make leave, let leave; escort, conduct, guide
+    \item[\textgreek{πένθος, πένθους, τό}] grief, sadness, sorrow
+    \item[\textgreek{πέπνυμαι}] be wise, be sensible; possess intelligence
+    \item[\textgreek{περαίνω}] bring to an end, finish, accomplish, complete
+    \item[\textgreek{πέρας, πέρατος, τό}] an end, limit, boundary
+    \item[\textgreek{περί}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) around, round about; about, for, on account of; concerning, about; before, above, beyond; (with dative) round about, around; for, about, on account of, by reason of; (with accusative) round, around, near; about, concerning, in the case of, in respect of, in regard to; about (a time)
+    \item[\textgreek{περιέχω}] surround, enfold, contain; embrace; include (in onself), contain, comprise
+    \item[\textgreek{περιίστημι}] place around, set around, set about; stand round, encircle, surround; lie, overhang, menace
+    \item[\textgreek{Περικλέης, Περικλέους, ὁ}] Pericles (a male name)
+    \item[\textgreek{Περικλῆς, Περικλέους, ὁ}] Pericles (a male name)
+    \item[\textgreek{περιμένω}] wait for, await; await with patience, endure; consent, allow
+    \item[\textgreek{περιφανής, περιφανές}] seen all round; conspicuous, manifest, notable; well-known, notorious
+    \item[\textgreek{πηλίκος, πηλίκη, πηλίκον}] how great or large? how long? of what size?
+    \item[\textgreek{πηρός, πηρή, πηρόν}] disabled, maimed, crippled
+    \item[\textgreek{Πίνδαρος, Πινδάρου, ὁ}] Pindar (a male name)
+    \item[\textgreek{πίνω, πίομαι, ἔπιον, πέπωκα, -πέπομαι, -επόθην}] \marginnote{*}drink
+    \item[\textgreek{πιστεύω, πιστεύσω, ἐπίστευσα, πεπίστευκα, πεπίστευμαι, ἐπιστεύθην}] \marginnote{*}trust, trust to or in, put faith in, rely on, believe in
+    \item[\textgreek{πλατύς, πλατεῖα, πλατύ}] broad, wide; level, flat; vast, extensive, grand
+    \item[\textgreek{πλεῖστος, πλείστη, πλεῖστον}] \marginnote{*}most, largest
+    \item[\textgreek{πλείων, πλεῖον/πλέον}] \marginnote{*}more, larger
+    \item[\textgreek{πλευρόν, πλευροῦ, τό}] a rib; side, flank
+    \item[\textgreek{πλέω}] sail, go or travel by sea
+    \item[\textgreek{πλέως, πλέα, πλέων}] full of, full; complete, full
+    \item[\textgreek{πλῆθος, πλήθους, τό}] \marginnote{*}a great number, a throng, crowd, multitude; the majority of the population, the people
+    \item[\textgreek{πλήθω}] be or become full of
+    \item[\textgreek{πλησιάζω}] draw near, come close (plus dative); have dealings with, be a friend (plus dative)
+    \item[\textgreek{πλούσιος, πλούσια, πλούσιον}] rich, wealthy, opulent
+    \item[\textgreek{πλοῦτος, πλούτου, ὁ}] wealth, riches; abundance
+    \item[\textgreek{ποθέω}] desire; miss; long for, desire ardently; demand, require, have need for or of
+    \item[\textgreek{ποι}] (to, towards) somewhere
+    \item[\textgreek{ποιέω}] make, do, build; compose, write; complete, carry out, perform, do; consider, esteem
+    \item[\textgreek{ποίημα, ποιήματος, τό}] anything made or done; work, labor; poem, composition 
+    \item[\textgreek{ποίησις, ποιήσεως, ἡ}] a making, fabrication, creation, production
+    \item[\textgreek{ποιητής, ποιητοῦ, ὁ}] builder, manufacturer, a maker; an author, composer; inventor
+    \item[\textgreek{ποιητικός, ποιητική, ποιητικόν}] capable of making, creative, productive
+    \item[\textgreek{ποιητός, ποιητή, ποιητόν}] made
+    \item[\textgreek{ποικίλος, ποικίλη, ποικίλον}] many-colored, of various colors; spotted, mottled, pied, dappled (of animals); complex, intricate, complicated; subtle, fine, profound; astute, shrewd (of people)
+    \item[\textgreek{ποινά, ποινᾶς, ἡ}] Doric/lyric form of ποινή
+    \item[\textgreek{ποινή, ποινῆς, ἡ}] money paid in recompense for a crime; penalty, recompense, requital
+    \item[\textgreek{ποῖος, ποία, ποῖον}] \marginnote{*}of what nature, sort, kind, quality, or type?
+    \item[\textgreek{ποιός, ποιά, ποιόν}] of a certain nature, sort, kind, quality, or type
+    \item[\textgreek{πόλις, πόλεως, ἡ}] \marginnote{*}a city
+    \item[\textgreek{πολίτης, πολίτου, ὁ}] a member of a city or state, citizen
+    \item[\textgreek{πολιτικός, πολιτική, πολιτικόν}] civic, civil; related to a citizen or the life of citizens; political, belonging to the state; civil, , municipal (as opposed to natural); public (as opposed to private)
+    \item[\textgreek{πολλάκις}] \marginnote{*}many times, often, frequently, repeatedly
+    \item[\textgreek{πολλαχῇ}] many times, much; in many ways, variously
+    \item[\textgreek{Πολυκράτης}] Polycrates (a male name)
+    \item[\textgreek{πολύς, πολλή, πολύ}] \marginnote{*}much, many, numerous, in great number; large, ample, vast
+    \item[\textgreek{πονηρός, πονηρά, πονηρόν}] \marginnote{*}(in an active sense) painful, bothersome, torturous; (in a passive sense) troubled, tormented, unfortunate; bad, worthless, wicked, evil, miserable
+    \item[\textgreek{πορεύω, πορεύσω, ἐπόρευσα, πεπόρευμαι, ἐπορεύθην}] \marginnote{*}make go, carry, convey, transport; (middle and passive) walk, proceed, go, travel
+    \item[\textgreek{πορίζω}] transport, lead, guide; furnish, provide, supply; (middle) provide for oneself, get for oneself, procure, acquire
+    \item[\textgreek{πόρος, πόρου, ὁ}] a ford, place for passage (e.g., of a river), passage (hence English \textit{pore}); device, resource, way out; procurement (of money), enrichment, acquisition, gain
+    \item[\textgreek{ποσαπλάσιος, ποσαπλάσια, ποσαπλάσιον}] how many times multiplied? how many fold?
+    \item[\textgreek{ποσάπους, ποσάποδος, ὁ/ἡ}] of how many feet? how long?
+    \item[\textgreek{πόσος, πόση, πόσον}] of what quantity?; how much?; how many?; how great?; how long?
+    \item[\textgreek{πότε}] \marginnote{*}when?
+    \item[\textgreek{ποτέ}] \marginnote{*}at some time or other, at some time
+    \item[\textgreek{πότερος, ποτέρα, πότερον}] \marginnote{*}who or which (of two, of the two)
+    \item[\textgreek{ποῦ}] \marginnote{*}where?
+    \item[\textgreek{που}] \marginnote{*}anywhere, somewhere
+    \item[\textgreek{πούς, ποδός, ὁ}] \marginnote{*}a foot (of a person or animal); a metrical foot; the foot or base(of something such as a mountain)
+    \item[\textgreek{πρᾶγμα, πράγματος, τό}] \marginnote{*}(in commercial terms) affair, business, interest; (more generally) question, matter, affair, business; act, action, conduct; fact, event, accident, affair; nuisance, trouble, difficulty; (concretely) thing, being, creature
+    \item[\textgreek{πρᾶξις, πράξεως, ἡ}] \marginnote{*}bussiness, deal; result, outcome; action, operation, act, deed
+    \item[\textgreek{πρᾶος, πρᾶον}] mild, soft, gentle, meek; moderate, measured, contained
+    \item[\textgreek{πράττω, πράξω, ἔπραξα, πέπραγα (intransitive)/πέπραχα (transitive), πέπραγμαι, ἐπράχθην}] (transitive) achieve, bring about, effect; make (so and so); be busy with; handle, manage, do; do something to someone (with two accusatives); (intransitive) fare, be in a specified condition (with adverbs or adverbial expressions)
+    \item[\textgreek{πρεσβύτερος, πρεσβυτέρα, πρεσβύτερον}] \marginnote{*}elder, older
+    \item[\textgreek{πρεσβύτης, πρεσβύτου}] (adjective) old, ancient, senior; (substantive) an old man
+    \item[\textgreek{πρίν}] \marginnote{*}before; (of future time) before that time, sooner; (of past time) formerly, once, previously
+    \item[\textgreek{πρό}] \marginnote{*}(preposition with genitive) before; in front of; sooner, rather than (of precedence)
+    \item[\textgreek{προβιβάζω}] make step forward, lead forward, lead on; push forward, advance
+    \item[\textgreek{Πρόδικος, Προδίκου, ὁ}] Prodicus (a male name)
+    \item[\textgreek{προθυμέομαι}] be ready, willing, eager, zealous to do
+    \item[\textgreek{προθυμητέον}] it is necessary to desire or wish; it is necessary to be in good spirits
+    \item[\textgreek{προθυμία, προθυμίας, ἡ}] readiness, willingness, eagerness, zeal
+    \item[\textgreek{πρός}] \marginnote{*}(preposition with genitive, dative, and accusative) (with genitive) from; before, in the presence of; by, before (in oaths); at the hands of, from (of cause or responsibility); (with dative) near, at, on; before, in the presence of; in addition to, besides; (with accusative) towards; against; near to, towards (of time); in reference to, in consequence of, according to
+    \item[\textgreek{προσαγορεύω}] address, greet; call (by a certain name), designate (with a certain name)
+    \item[\textgreek{προσαναπληρόω}] (active or middle) fill up (in addition or besides), replenish (in addition or besides); complete, make complete
+    \item[\textgreek{προσανερωτάω}] ask or inquire further
+    \item[\textgreek{προσγίγνομαι}] (in a military or political context)  (plus dative) attach oneself, join (often, as an ally), reinforce, join as reinforcement; (generally) be added, accrue; become in addition
+    \item[\textgreek{πρόσειμι}] be beside; be added; belong, pertain
+    \item[\textgreek{προσεκτέον}] (from \textgreek{προσέχω}) one must apply; one must attend (to)
+    \item[\textgreek{προσέρχομαι}] come or go to
+    \item[\textgreek{προσέχω}] apply (something to something), lean (something) on (something); (frequently with \textgreek{τὸν νοῦν}) pay attention, direct one's mind; (intransitive, perhaps with \textgreek{τὸν νοῦν} implied) pay attention, think
+    \item[\textgreek{προσήκω, προσήξω, –––, –––, –––, –––}] \marginnote{*}have arrived at; have come, be near at hand, be present; belong to, concern (plus dative); befit, be proper, be appropriate; (of people) be related to, e.g., \textgreek{οἱ προσήκοντες} the relatives
+    \item[\textgreek{πρόσθεν}] (adverb and preposition with genitive) before, in front (of); in preference to
+    \item[\textgreek{προσκαλέω}] call to help, call as reinforcement; call, designate (by a name); summon, invite; call as witness
+    \item[\textgreek{προσλαμβάνω}] take or receive besides, get over and above
+    \item[\textgreek{προσομολογέω}] agree, assent, declare agreement; admit, recognize, acknowledge, concede
+    \item[\textgreek{προσποιέω}] gain for, attract to the side of, procure for; (middle) pretend, feign, allege, simulate
+    \item[\textgreek{προστάσσω}] place or post at (a place); command, order
+    \item[\textgreek{προστίθημι, προσθήσω, προσέθηκα, προστέθηκα, προστέθειμαι, προσετέθην}] \marginnote{*}hand over, deliver; bestow, give; attribute, impute; add, join, make additions; (middle) agree to, give assent to (plus dative); associate with, take as a friend or ally (plus accusative)
+    \item[\textgreek{πρότερος, προτέρα, πρότερον}] \marginnote{*}before, in front of, sooner, earlier; above, superior
+    \item[\textgreek{προτίθημι}] put in front, premise, expound first; propose, present, offer
+    \item[\textgreek{προὔργου}] (crasis for \textgreek{πρὸ ἔργου}) useful, helpful, poortune, advantageous; (adverbially) conveniently, usefully, opportunely
+    \item[\textgreek{Πρωταγόρας, Πρωταγόρου, ὁ}] Protagoras (a male name)
+    \item[\textgreek{πρῶτος, πρώτη, πρῶτον}] \marginnote{*}first (in space, time, order, importance), in front, basic, original, fundamental, initial
+    \item[\textgreek{πω}] (usually with a negative) yet, up to this time
+    \item[\textgreek{πώποτε}] (usually with a negative) ever yet, ever
+    \item[\textgreek{πῶς}] \marginnote{*}how? in what way or manner?
+    \item[\textgreek{πως}] \marginnote{*}in any way, at all, by any means
+    \item[\textgreek{ῥάδιος, ῥᾳδία, ῥᾴδιον}] \marginnote{*}easy, ready, easy to make or do; (of people) easy-going, obliging, agreeable
+    \item[\textgreek{σαυτοῦ}] see σεαυτοῦ
+    \item[\textgreek{σαφής, σαφές}] \marginnote{*}clear, plain, distinct, manifest
+    \item[\textgreek{σεαυτοῦ, σεαυτῆς, σεαυτοῦ}] (reflexive 2nd person singular pronoun with no nominative) yourself
+    \item[\textgreek{σεύω}] cause to move rapidly, shake, push; hunt, drive away, drive back, push away; (middle transitive) chase, purse; drive away, hurl; (middle and passive intransitive) hurl oneself, leap, rush
+    \item[\textgreek{σθένος, σθένους, τό}] strength, might
+    \item[\textgreek{σκεπτέος}] one must reflect, consider, examine
+    \item[\textgreek{σκέπτομαι}] examine, consider, reflect
+    \item[\textgreek{σκέψις, σκέψεως, ἡ}] a viewing, perception by the senses; speculation, consideration; inquiry, speculation into or about something
+    \item[\textgreek{σκιά, σκιᾶς, ἡ}] a shadow; shade, phantom,  (of a dead person)
+    \item[\textgreek{σκοπέω, σκοπήσω, ἐσκόπησα, ἐσκόπηκα, ἐσκόπημαι, ἐσκοπήθην}] \marginnote{*}\textit{in Attic used only in present and imperfect; later used in other tenses} (literal) look at, observe, contemplate; consider, examine, ponder, reflect; look for, pursue, seek (all meanings shared by active and middle)
+    \item[\textgreek{σκυτοτόμος, σκυτοτόμου, ὁ}] a leather-cutter, a worker in leather
+    \item[\textgreek{σκώπτω}] hoot, mock, jeer, scoff at
+    \item[\textgreek{σμη̂νος, σμήνους, τό}] a beehive; a swarm of bees
+    \item[\textgreek{σμικρός, σμικρά, σμικρόν}] \marginnote{*} small (in size, duration, value, interest, importance, etc.); e.g., little, brief, of little importance, of little interest (\textit{also written} with stem \textgreek{μικρ}-)
+    \item[\textgreek{σός, σή, σόν}] \marginnote{*}your, yours, of you
+    \item[\textgreek{σοφία, σοφίας, ἡ}] skill; knowledge (of something), acquaintance (with something); sound judgment, practical wisdom; wisdom; philosophy
+    \item[\textgreek{σοφιστής, σοφιστοῦ, ὁ}] a wise person; a Sophist (itinerant teacher of rhetoric, politics, math, and more)
+    \item[\textgreek{σοφός, σοφή, σοφόν}] \marginnote{*}skilfull, skilled, expert; wise, senssible, prudent, discerning; educated, learned; subtle, clever, ingenious
+    \item[\textgreek{στερεός, στερεά, στερεόν}] firm, solid, hard; strong, vigorous; harsh, severe
+    \item[\textgreek{Στέφανος, Στεφάνου, ὁ}] Stephanus (a male name)
+    \item[\textgreek{στόμα, στόματος, τό}] \marginnote{*}the mouth; face; opening
+    \item[\textgreek{στρογγύλος, στρογγύλη, στρογγύλον}] round, spherical
+    \item[\textgreek{στρογγυλότης, στρογγυλότητος, ἡ}] roundness
+    \item[\textgreek{σύ}] you (singular \textit{you})
+    \item[\textgreek{συγγενής, συγγενές}] born with, congenital, natural, in-born; of the same family, descent, or kin; akin, cognate, of the same kind; (substantive) a relative, kinsperson
+    \item[\textgreek{συγγίγνομαι}] be together with, keep company with, meet, associate with (plus dative); be connected to, be familiar with (plus dative); be born together; come to the aid of, help
+    \item[\textgreek{συγχωρέω}] come together, converge, combine, meet; give way, yield, concede, consent (to someone); grant, concede (something to someone); agree, consent, acquiesce; surrender, come to terms
+    \item[\textgreek{συζητέω}] search or examine together with
+    \item[\textgreek{συλλαμβάνω}] collect, gather together, assemble
+    \item[\textgreek{συλλήβδην}] collectively, in sum, in short
+    \item[\textgreek{συμβαίνω, σθμβήσομαι, συνέβην, συμβέβηκα, –––, –––}] \marginnote{*}come to an agreement, settle, come to terms; agree, fit, correspond; fall to the lot of, happen to (someone); happen, occur, take place; (in logic) result, follow
+    \item[\textgreek{συμβουλεύω}] advise, counsel; (middle) consult with a person (i.e., ask the person's advice); consult, deliberate
+    \item[\textgreek{σύμμαχος, σύμμαχον}] \marginnote{*}fighting along with, allied with; (substantive) an ally
+    \item[\textgreek{συμμείγνυμι}] mix together, join, unite; (intransitive) associate with, hang out with
+    \item[\textgreek{σύμμετρος, σύμμετρον}] commensurate with, commensurable; in measure with, proportionable, suitable; in right measure, in due proportion, symmetrical; fitting, meet, due
+    \item[\textgreek{συμμίγνυμι}] mix together, join, unite; (intransitive) associate with, hang out with
+    \item[\textgreek{σύμπας, σύμπασα, σύμπαν}] all together, all at once, all in a body
+    \item[\textgreek{συμπένομαι}] be poor along with, be lacking together with
+    \item[\textgreek{σύν}] \marginnote{*}\textit{adverb and preposition with dative} (adverb) together, all at once, at the same time; besides, also; (with dative) with, along with, in company with, together with
+    \item[\textgreek{συνήθεια}] habit, custom, practice; (linguistic) usage; (an extension of the last) ordinary language; habitual acquaintance, familiarity, intimacy (of friends, family, or lovers)
+    \item[\textgreek{συνίημι}] set or bring together; perceive, hear; learn, know, understand, comprehend
+    \item[\textgreek{συντρίβω}] (literally) rub together; (usually) break, shatter, smash to pieces; grind; crush, wear out
+    \item[\textgreek{σφόδρα}] very, very much, exceedingly, violently
+    \item[\textgreek{σχεδόν}] close, near, close by (in space or time); about, around, roughtly, approximately, more or less; (in affirmative answers) so it seems, it is likely
+    \item[\textgreek{σχῆμα, σχήματος, τό}] \marginnote{*}form, figure, appearance; bearing, air, demeanor
+    \item[\textgreek{σχολάζω}] be unoccupied, have spare time, have leisure, have nothing to do; stop, cease, leave off; (have time and so) devote oneself, dedicate oneself to (plus dative)
+    \item[\textgreek{σῴζω, σώσω, ἔσωσα, σέσωκα, σέσωσμαι, ἐσώθην}] save, keep safe, preserve; keep in mind, remember; bring one safely to; rescue safely from
+    \item[\textgreek{Σωκράτης, Σωκράτους, ὁ (\textit{vocative} Σώκρατες)}] Socrates (a male name)
+    \item[\textgreek{σωφρονέω}] be sound of mind; be moderate or temperate, have self control, behave prudently; be wise, sensible, prudent
+    \item[\textgreek{σωφροσύνη, σωφροσύνης, ἡ}] soundness of mind, moderation, discretion
+    \item[\textgreek{σώφρων, σῶφρον}] of sound mind; sensible, prudent, sensible, moderate, self-controlled; wise, reasonable, sage
+    \item[\textgreek{τᾶν}] Doric/lyric form of τῶν (feminine genitive plural)
+    \item[\textgreek{ταράττω}] upset, agitate, disturb; provoke, stir up, excite, incite; cause confusion, throw into confusion, throw into disorder
+    \item[\textgreek{τάττω, τάξω, ἔταξα, τέταχα, τέταγμαι, ἐτάχθην}] \marginnote{*}arrange, put in order; form, array, marshal (of troops); appoint, assign; order (someone to do something); ordain, prescribe, order
+    \item[\textgreek{ταύτῃ}] in this way.
+    \item[\textgreek{τάχα}] immediately, quickly, rapidly; perhaps, probably
+    \item[\textgreek{ταχύς, ταχεῖα, ταχύ}] \marginnote{*}quick, swift, fleet
+    \item[\textgreek{τε}] \marginnote{*}and
+    \item[\textgreek{τείνω}] stretch, pull; stretch out, spread, spread out, extend; concern, refer to, indicate; force, strive, hurry
+    \item[\textgreek{Τειρεσίας, Τειρεσίου, ὁ}] Tiresias (a male name)
+    \item[\textgreek{τελευτάω, τελευτήσω, ἐτελεύτησα, τετελεύτηκα, τετελεύτημαι, ἐτελευτήθην}] \marginnote{*}(transitive) complete, finish, accomplish; (intransitive) come to an end, conclude, finish, be realized
+    \item[\textgreek{τελευτή, τελευτῆς, ἡ}] a finishing, completion, accomplishment; end, event, issue; termination, end; end of life
+    \item[\textgreek{τέμνω, τεμῶ, ἔτεμον, τέτμηκα, τέτμημαι, ἐτμήθην}] \marginnote{*}cut, wound; separate, cut, divide; destroy, lay low, devastate
+    \item[\textgreek{τέρας, τέρατος, τό}] a sign, wonder, marvel
+    \item[\textgreek{τεσσαράκοντα}] forty
+    \item[\textgreek{τέτταρες, τέτταρα}] \marginnote{*}four
+    \item[\textgreek{τετράγωνος, τετράγωνον}] with four equal angles, rectangular or square
+    \item[\textgreek{τετράκις}] four times
+    \item[\textgreek{τετραπλάσιος, τετραπλασία, τετραπλάσιον}] fourfold, four times as much
+    \item[\textgreek{τετράπους, τετράπουν}] four-footed (of an animal or object); foor-feet in length
+    \item[\textgreek{τέχνη, τέχνης, ἡ}] \marginnote{*}art, skill, craft; craft, cunning (in a bad sense), wiles; an art, i.e. a system or method of making or doing anything
+    \item[\textgreek{τῇ}] here, there
+    \item[\textgreek{τῇδε}] here, there; thus, in this way, in that way
+    \item[\textgreek{τηλικοῦτος, τηλικαύτη, τηλικοῦτον}] of such an age, so old
+    \item[\textgreek{τίθημι, θήσω, ἔθηκα, τέθηκα, τέθειμαι, ἐτέθην}] \marginnote{*}set, put, place; arrange, establish,; order, command; make, render (put in a specific condition or state); consider, judge, think; administer, arrange, manage, provide for; give, grant, assign
+    \item[\textgreek{τιμάω, τιμήσω, ἐτίμησα, τετίμηκα, τετίμημαι, ἐτιμήθην}] \marginnote{*}honor, show respect for; apprciate, value, hold in regard, honor; set a value, assign a price
+    \item[\textgreek{τιμή, τιμῆς, ἡ}] \marginnote{*}honor, esteem, deference; dignity, lordship; sovereignty; office, magistracy
+    \item[\textgreek{τίμιος, (τιμία), τίμιον}] valued, worth; costly, prized; conferring honor, honorable
+    \item[\textgreek{τίς, τί}] \marginnote{*}who? which?
+    \item[\textgreek{τις, τι}] \marginnote{*}any one, any thing, some one, some thing;
+    \item[\textgreek{τοι}] \marginnote{*}(expressing belief in an assertion) let me tell you, surely (but often better left untranslated as such); (to mark an inference) then, consequently; (also frequently used to emphasize other particles)
+    \item[\textgreek{τοίνυν}] \marginnote{*}therefore, accordingly
+    \item[\textgreek{τοιόσδε, τοιάδε, τοιόνδε}] \marginnote{*}such as, such; (pointing forward) the following; (pointing backwards) the previous
+    \item[\textgreek{τοιοῦτος, τοιαύτη, τοιοῦτο}] \marginnote{*}such, like this, such as this (usually referring to what precedes or in correlation with another word)
+    \item[\textgreek{τόπος, τόπου, ὁ}] \marginnote{*}a place, region, district
+    \item[\textgreek{τοσησδί}] strengthened form of τοσόσδε
+    \item[\textgreek{τοσόσδε, τοσήδε, τοσόνδε}] so big, so great, so much; so many
+    \item[\textgreek{τοσοῦτος, τοσαύτη, τοσοῦτο(ν)}] \marginnote{*}so large, so tall, so big, so great; so much
+    \item[\textgreek{τότε}] \marginnote{*}at that time, then
+    \item[\textgreek{τοτέ}] \marginnote{*}at times, now and then
+    \item[\textgreek{τραγικός, τραγική, τραγικόν}] (literally) of a goat, for a goat; (usually) tragic, related to tragedy; (of style) elevated, grandiose, solemn; (in a negative sense, of style) pompous, overwrought
+    \item[\textgreek{τρεῖς, τρία}] three
+    \item[\textgreek{τρέφω, θρέψω, ἔθρεψα, τέθραμμαι, ἐτράφην}] \marginnote{*}nourish, feed; support, maintain; rear, educate, train
+    \item[\textgreek{τριάκοντα}] \marginnote{*}thirty
+    \item[\textgreek{τρίγωνος, τρίγωνον}] three-cornered, triangular
+    \item[\textgreek{τρίζω}] utter a shrill cry, scream, cry
+    \item[\textgreek{τρίπους, τρίπουν}] three-footed, of or with three feet
+    \item[\textgreek{τρίς}] thrice, three times
+    \item[\textgreek{τρίτος, τρίτη, τρίτον}] \marginnote{*}the third
+    \item[\textgreek{τρόπος, τρόπου, ὁ}] \marginnote{*}a turn, direction; way, manner, style, mode, use; disposition, attitude, character, nature
+    \item[\textgreek{τρυφάω}] live in luxury, live a life of pleasure (in a positive or negative sense); put on airs, be disdainful, be haughty
+    \item[\textgreek{τυγχάνω, τεύξομαι, ἔτυχον, τετύχηκα, τέτυγμαι, ἐτύχθην}] \marginnote{*}(of coincidence or chance) meet, happen, chance to be; occur, happen, transpire by chance; succeed, have success; (with weapons) hit the mark, strike; bump into, encounter, find; (middle and passive) obtain
+    \item[\textgreek{τυραννεύω}] be a \textgreek{τύραννος}, i.e. an absolute sovereign or despot (in ancient political contexts, the word can be positive or negative, unlike English \textit{tyrant})
+    \item[\textgreek{τύχη, τύχης, ἡ}] \marginnote{*}good luck, good fortune, success; fortune, chance; accident, random chance
+    \item[\textgreek{ὑβριστής, ὑβριστοῦ}] violent, overbearing, insolent, arrogant, unbridled; (overly) pleasure-seeking, licentious
+    \item[\textgreek{ὑγίεια, ὑγιείας, ἡ}] health, soundness (of body or mind); cure, medicine
+    \item[\textgreek{ὑγιής, ὑγιές}] sound, healthy, in good health; (of things) undamaged, whole, intact; (figuratively) correct, wise, good, honest, just, true
+    \item[\textgreek{υἱός, υἱοῦ, ὁ}] \marginnote{*}a son
+    \item[\textgreek{ὑμός, ὑμή, ὑμόν}] your (plural \textit{you})
+    \item[\textgreek{ὑπάρχω, ὑπάρξω, ὑπῆρξα, ὑπῆρχα, ὑπῆργμαι, ὑπήρχθην}] \marginnote{*}initiate, start, begin; be ready, be at the disposal (of); be proper (to someone or something), belong (to someone or something), be a quality or characteristic (of someone or something); occur, happen (also used impersonally as \textit{it happens}); (impersonal) it is possible
+    \item[\textgreek{ὑπέρ}] \marginnote{*}\textit{adverb or preposition with genitive or accusative} (adverb) above; more; too much; (with genitive) above, over (of location); beyond, above; (of motion) on the other side, beyond, up; in defense of, for, in favor of; in place of, in the name of, on behalf of; for, because of; (with accusative) on above, over, beyond (of motion); (of measure) beyond, more than); (of time) before, prior to
+    \item[\textgreek{ὑπερήφανος, ὑπερήφανον}] overweening, arrogant, haughty
+    \item[\textgreek{ὕπερθεν/ὕπερθε}] (properly) from above; (usually) above
+    \item[\textgreek{ὑπισχνέομαι, ὑποσχήσομαι, ὑπεσχόμην, –––, ὑπέσχημαι, ὑπεσχέθην}] promise (usually with a future infinitive); profess, assert, assure (with present infinitive)
+    \item[\textgreek{ὑπό}] \marginnote{*}\textit{preposition with genitive, dative, and accusative} (with genitive) from under; under, beneath; (of agency) by, at the hands of; (with dative) under; (with accusative) under; (of time) just after, just about
+    \item[\textgreek{ὑποδέχομαι, ὑποδέξομαι, ὑπεδεξάμην, ὑποδέδεγμαι, –––, ὑπεδέχθην}] receive, welcome; withstand or resist (an assault); promise, undertake, grant; (impersonal) be acceptable
+    \item[\textgreek{ὑπόδημα, ὑποδήματος, τό}] a sandal
+    \item[\textgreek{ὑπόθεσις, ὑποθέσεως, ἡ}] a foundation, anything placed underneath something else (as a base); hypothesis, supposition
+    \item[\textgreek{ὑπολαμβάνω, ὑπολήψομαι, ὑπέλαβον, ὑπείληφα, ὑπείλημμαι, ὑπελήφθην}] \marginnote{*}(literal) take on one's back, load; grasp, seize, catch; respond, reply, answer (back); suppose, presuppose, think; interpret, divine
+    \item[\textgreek{ὑποπτεύω}] suspect; suppose, conjecture, think
+    \item[\textgreek{ὑπόσχεσις, ὑποσχέσεως, ἡ}] promise, pledge; (later) profession of philosopher
+    \item[\textgreek{ὑποτίθημι}] place under, place as a foundation; (middle) hypothesize, suppose (for the sake of argument)
+    \item[\textgreek{φαίνω, φανῶ, ἔφηνα, πέφηνα, πέφασμαι, ἐφάνην}] \marginnote{*}make visible, show, bring to light; indicate, declare, disclose, demonstrate; present, reveal, manifest; (passive) appear, come to light; (with infinitive) seem, appear; (with supplementary participle) manifestly be, clearly be; be evident
+    \item[\textgreek{φανερός, φανερή, φανερόν}] \marginnote{*}open to sight, visible, manifest, evident, clear, known
+    \item[\textgreek{φαρμάττω}] (Homeric, of metals) temper; cure with medicine; (of food) prepare, season; (middle) prepare magic charms; (passive) be charmed, be bewitched
+    \item[\textgreek{φάσκω}] say, affirm, assert; promise; think, believe, suppose
+    \item[\textgreek{φαῦλος, (φαύλη,) φαῦλον}] of little or no worth, of little value, negligible; ordinary, simple, common; mediocre, of little worth, of poor quality; bad, evil, contemptible; ordinary, common, low, inferior (in status, rank, etc.)
+    \item[\textgreek{Φειδίας, Φειδίου, ὁ}] Phidias (a male name)
+    \item[\textgreek{Φερσέφόνα, Φερσέφονας, ἡ}] Persephone, queen of the underworld (this is an poetic variant form of her name, and it uses the Doric/lyric -\textgreek{α} for -\textgreek{η})
+    \item[\textgreek{φέρω, οἴσω, ἤνεγκα/ἤγεγκον, ἐνήνοχα, ἐνήνεγμαι, ἠνέχθην}] \marginnote{*}bring, bear, carry; (middle) win; suffer, endure; tell, announce (same meaning sometimes in middle)
+    \item[\textgreek{φημί, φήσω, –––, –––, –––, –––}] \marginnote{*}say, affirm, speak; believe, think, consider, suppose; say yes, affirm, admit
+    \item[\textgreek{φθονέω}] bear ill-will or malice, bear a grudge, be envious or jealous
+    \item[\textgreek{φίλος, φίλη, φίλον}] \marginnote{*}loved, beloved, dear; (Homeric) one's own; (substantive) a friend, friends; (substantive) a relative, relatives; friendly; (substantive) a friend
+    \item[\textgreek{φλαῦρος, φλαύρα, φλαῦρον}] of low value, of little worth, insignificant; bad, devoid of balue; worthless, bad, wicked
+    \item[\textgreek{φράζω, φράσω, ἔφρασα, πέφρακα, πέφρασμαι, ἐφράσθην}] \marginnote{*}show, indicate (with words); tell, declare; order, command; (middle and passive) think (about); consider, think, believe, suppose
+    \item[\textgreek{φρονέω, φρονήσω, ἐφρόνησα, πεφρόνηκα, πεφρόνημαι, ἐφρονήθην}] \marginnote{*}think; intend to (plus infinitive); think a certain way (plus adverb), have a certain disposition towards (plus adverb and dative)
+    \item[\textgreek{φρόνησις, φρονήσεως, ἡ}] thought, aspiration, purpose, intention; good sense, thoughtfulness, prudence, wisdom
+    \item[\textgreek{φρόνιμος}] in one's right mind, in one's senses; sensible, prudent, wise, shrewd
+    \item[\textgreek{φυλάττω, φυλάξω, ἐφύλαξα, πεφύλαχα, πεφύλαγμαι, ἐφυλάχθην}] \marginnote{*}(in transitive) be on guard, stand watch; (transitive) guard, protect, defend, keep watch over; wait for, await (i.e., watch for something or someone); (figurative) keep, preserve, maintain (of feelings or states of mind); (middle) be on guard against, avoid, keep away from (something in the accusative)
+    \item[\textgreek{φύσις, φύσεως, ἡ}] \marginnote{*}nature; natural qualities, powers; constitution, condition
+    \item[\textgreek{φύω, φύσω, ἔφυσα/ἔφυν, πέφυκα, –––, ἐφύην}] \marginnote{*}bring forth, produce, put forth; beget, give birth to; (intransitive) be born, arise, grow, be produced (often with a genitive of source or origin); (with infinitive) be naturally inclined, be predisposed; be in favor of; (middle and passive like active intransitive) be bore, arise, grow, be produced
+    \item[\textgreek{φωνή, φωνῆς, ἡ}] \marginnote{*}(properly) sound of a voice; voice; sound (in general); tone
+    \item[\textgreek{χαίρω, χαιρήσω, ἐχάρησα, κεχάρηκα, κεχάρημαι, ἐχάρην}] \marginnote{*}rejoice, be glad, be delighted (by dative or supplementary participle); (used in greeting and departure) hello, welcome; goodbye, farewell
+    \item[\textgreek{χαλάω, χαλάσω, ἐχάλασα, κεχάλακα, κεχάλασμαι, ἐχαλάσθην}] (transitive) loosen, relax, untie; lower, let fall, make fall; decrease; (intransitive) loosen, be loosened, decrease; (with a genitive) relax, decrease; (with dative) pardon, be indulgent, give in to
+    \item[\textgreek{χαλεπαίνω}] be tough, harsh, hostile; (with dative) get angry, be angry at, be hostile toward; (with no object) be angry, be indignant
+    \item[\textgreek{χαλεπός, χαλεπή, χαλεπόν}] \marginnote{*}hard (to bear), troublesome, tough, heavy, painful; hard (to do or handle), difficult, harsh, dangerous, harmful
+    \item[\textgreek{χαρίζομαι, χαριοῦμαι, ἐχαρισάμην}] (with dative) say or do something pleasing for, gain favor with, please; please, indulge, yield to, give in to
+    \item[\textgreek{χείρων, χεῖρον}] \marginnote{*}worse, inferior (in value, strength, rank, morality, etc.)
+    \item[\textgreek{χθές}] yesterday
+    \item[\textgreek{χράομαι, χρήσομαι, ἐχρησήμην, –––, κέχρημαι, ἐχρήσθην}] \marginnote{*}use, experience, suffer; treat someone in a certain way (plus dative and adverb); declare, pronounce, proclaim (of an oracle giving an answer); (middle) consult an oracle or inquire of a god
+    \item[\textgreek{χρή}] \marginnote{*}(used as an impersonal verb) it is necessary, it must; one must, one should, ought
+    \item[\textgreek{χρῆμα, χρήματος, τό}] \marginnote{*}(plural) goods, money, possessions; a thing, matter, affair, event; a lot, a heap
+    \item[\textgreek{χρήσιμος, χρησίμη, χρήσιμον}] \marginnote{*}useful, serviceable, good for use, good, apt or fit
+    \item[\textgreek{χρῆσις, χρήσεως, ἡ}] a using, use, employment; usefulness, advantage; relationship, familiarity; usage (of a word or an author's style); response of an oracle; a loan, lending
+    \item[\textgreek{χρησμῳδός, χρησμῳδόν}] prophetic, delivering oracles, oracular
+    \item[\textgreek{χροά, χροᾶς, ἡ}] the surface of a body, the skin; the body
+    \item[\textgreek{χροιά, χροιᾶς, ἡ}] the surface of a body, the skin; the body
+    \item[\textgreek{χρόνος, χρόνου, ὁ}] \marginnote{*}time (in general); duration, period, length of time, time; time of life, age
+    \item[\textgreek{χρυσίον, χρυσίου, τό}] a piece of gold
+    \item[\textgreek{χρῶμα, χρώματος, τό}] surface, skin; color, coloring
+    \item[\textgreek{χρώς, χρώτος, ὁ}] the surface of the body, the skin, flesh
+    \item[\textgreek{χωρέω}] make room for another, give way, draw back, retire, withdraw
+    \item[\textgreek{χωρίζω}] separate, part, sever, divide
+    \item[\textgreek{χωρίον, χωρίου, τό}] a particular place, a place, spot, district
+    \item[\textgreek{ψεῦσμα, ψεύσματος, τό}] a lie, falsehood
+    \item[\textgreek{ψυχή, ψυχῆς, ἡ}] \marginnote{*}breath; life; soul (as opposed to body); soul, heart, character, mind, spirit, temperament
+    \item[\textgreek{ὦ}] \marginnote{*}O! oh!; (with vocative) hey, yo
+    \item[\textgreek{ὧδε}] \marginnote{*}in this way, so, thus
+    \item[\textgreek{ὠνέομαι, ὠνήσομαι, ὠνησάμην/ἐωνησάμην, –––, ἐώνημαι, ἐωνήθην}] buy, purchase; random; bribe
+    \item[\textgreek{ὥρα}] duration (of time); lifetime; season; (plural) climate; (singular) fruits of the year, harvest; time or part of the day; (later) hour (as a measured portion of the day)
+    \item[\textgreek{ὡς}] \marginnote{*}thus, as; (so) that, so as to; because, since; when; (in exclamation) how\dots ! how much\dots !
+    \item[\textgreek{ὡσαύτως}] likewise, in the same way, just so
+    \item[\textgreek{ὥσπερ}] \marginnote{*}as, in the way in which; as if, so to speak, as it were
+    \item[\textgreek{ὥστε}] \marginnote{*}as; as being, inasmuch as; (so) that, as to; and so, therefore
+    \item[\textgreek{ὠφελέω, ὠφελήσω, ὠφέλησα, ὠφέληκα, ὠφέλημαι, ὠφελήθην}] help, assist, aid, be of service; be useful, be of help; (passive) be helped, receive, help or assistance, derive advantage, profit, or benefit
+    \item[\textgreek{ὠφέλιμος, (ὠφελίμη,) ὠφέλιμον}] helpful, useful, beneficial, profitable
+\end{description}
+
+% -]] Meanings!
+
+\clearpage
+
+\printbibliography
+\end{document}
+% -]]

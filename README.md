@@ -20,8 +20,9 @@ The work is available under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ## Can I help out?
 
-Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please email me (peter@aronoff.org) or contact me on Twitter (@telemachus).
+Thanks: I’d love that. In particular, if you find mistakes or want to improve what I have here in any way, please [file an issue][issues].
 
 [perseus]: http://www.perseus.tufts.edu/hopper
 [hodoi]: http://mercure.fltr.ucl.ac.be/Hodoi/concordances/platon_menon/listvocabulaire.cfm?lettre=001
 [cc]: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+[issues]: https://github.com/telemachus/meno-vocabulary/issues
